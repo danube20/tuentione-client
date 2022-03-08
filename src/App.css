@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap');
+
+:root {
+  --main-color-tuentione: #C4FEF4;
+  --main-color-private: ff334e;
+  --navbar-color: rgba(0, 0, 0, .55);
+  --box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  /* #E78F8E */
+  /* #FF9FB2 */
+  /* #D66BA0 */
+  /* #F4ACB7 
+  #FFCAD4 */
+  /* #EAC9C1 */
+}
+
+a {
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.minHeight {
+  min-height: 81.4vh;
+}
+
+/* NAVBAR */
+
+.navBg {
+  background-color: var(--main-color-tuentione);
+}
+
+.me-auto {
+  margin: 0 !important
+}
+
+/* LOGIN PAGE */
+
+.loginRegister {
+  margin-left: auto;
+  display: flex;
+}
+
+.login input {
+  background-color: rgb(219, 219, 219);
+  /* border: 1.5px solid #C4FEF4; */
+  /* box-shadow: 5px 5px 10px var(--main-color-tuentione); */
+  transition: background-color .5s;
+}
+
+.login input::placeholder {
+  color: white;
+}
+
+.login input:focus {
+  background-color: #C4FEF4;
+  box-shadow: 5px 5px 10px var(--main-color-tuentione)
+}
+
+.button {
+  background-color: rgb(219, 219, 219);
+  color: black
+}
+
+.h5EditProfile {
+  display: flex;
+  justify-content: center;
+}
+
+.button:focus {
+  background-color: #C4FEF4;
+  color: white;
+}
+
+/* PROFILE PAGE */
+
+.containerEditProfile {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  padding: 40px 16px 16px 16px;
+  box-shadow: var(--box-shadow);
+  justify-content: center;
+}
+
+.containerEditProfile img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  flex-shrink: 0;
+}
+
+.profileInfo {
+  margin: 0 20px;
+  align-self: center;
+  width: 70%;
+}
+
+.profileInfo p:nth-child(1) {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: -8px;
+}
+
+.profileInfo p:nth-child(2) {
+  font-weight: 200;
+  color: gray;
+}
+
+.profileEditBtn {
+  position: absolute;
+  right: 30px;
+}
+
+.profileButton::after {
+  content: ' Editar perfil';
+}
+
+.profileButton {
+  background-color: #ccc;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: .2s ease-out;
+}
+
+.profileButton:hover {
+  background-color: #a2a2a2;
+}
+
+.biography {
+  padding: 10px;
+  word-wrap: break-word;
+  width: 70%;
+}
+
+.biography span {
+  font-weight: 300;
+  color: rgb(199, 199, 199);
+}
+
+.profileBodyContainer {
+  width: 85%;
+  margin: 1rem auto;
+}
+
+.loginRegister a>p,
+.loginRegister span {
+  color: var(--navbar-color);
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .containerEditProfile {
+    display: block;
+    text-align: center;
+  }
+
+  .containerEditProfile img {
+    border-radius: 5px;
+  }
+
+  .profileInfo {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .profileInfo p:nth-child(4) {
+    margin-bottom: 3rem;
+  }
+
+  .biography {
+    width: 100%;
+  }
+
+  .profileBodyContainer {
+    display: block;
+    --bs-gutter-x: 0;
+    width: 100%;
+  }
+
+  .mobileProfilePage {
+    width: 100%;
+  }
+
+  .profileEditBtn {
+    right: 16px;
+    margin-top: -40px;
+  }
+}
+
+/*PROFILES PAGES*/
+
+.containerFP {
+
+  display: flex;
+  justify-content: center;
+}
+
+.friendsCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: black;
+}
+
+.friendsCardImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.friendsCardElem {
+  display: flex;
+  width: auto;
+  border: 1.5px solid black;
+  margin: 1rem 2rem;
+  box-shadow: 5px 5px 10px var(--main-color-tuentione);
+}
+
+
+.buttonAmigos {}
+
+/* HOMEPAGE */
+
+.homepage {
+  margin: 2rem 2rem;
+}
+
+.postForm {
+  background-color: white;
+  padding: 16px;
+}
+
+.postFormBtns {
+  display: flex;
+}
+
+.postFormBtn {
+  height: 2.4rem;
+  padding: 0 1rem;
+  margin-left: 1rem;
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.postUploadImage input {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.postContainer {
+  width: 40%;
+}
+
+.postSection {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+.postSection hr {
+  margin: 10px;
+}
+
+.postSection img {
+  width: 100%;
+}
+
+.postUserContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postUserInfo {
+  display: flex;
+}
+
+.postUserInfo img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow)
+}
+
+.postUserSidetext {
+  margin-left: 1rem;
+}
+
+.postUserSidetext p:nth-child(1) {
+  font-weight: 600;
+  color: black;
+  transition: .2s ease-in;
+}
+
+.postUserSidetext p:nth-child(1):hover {
+  color: #747474;
+}
+
+.postUserSidetext p:nth-child(2) {
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.postUserSidetext p:nth-child(3) {
+  font-weight: 300;
+  font-size: 12px;
+  color: #636363;
+}
+
+.postStatus p {
+  margin-top: 2rem;
+  font-size: 19px;
+}
+
+.btnDelEdit {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: gray;
+  margin: 0 5px;
+  font-size: 14px;
+  transition: .2s ease-out;
+}
+
+.btnDelEdit:hover {
+  color: #545454;
+}
+
+.postLikeBtn {
+  background-color: transparent;
+  border: 1.5px solid #25b6b8;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 15px;
+  color: #25b6b8;
+  font-weight: 600;
+  transition: .1s ease-out;
+}
+
+.postDislikeBtn {
+  background-color: #25b6b8;
+  border: 1.5px solid transparent;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+  transition: .1s ease-in;
+}
+
+.postBtns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dropdown-menu {
+  width: 34.56rem;
+  padding: 1rem;
+  transform: translate3d(-329px, 40px, 0px) !important;
+}
+
+.commentBtn>button {
+  margin-left: 10px;
+  color: #f72585;
+  font-weight: 600;
+  border-color: transparent;
+  transition: .2s ease-out;
+}
+
+.dropdown-toggle::after {
+  content: 'Comentar';
+  border: none;
+  vertical-align: 0;
+}
+
+.commentBtn>button:hover {
+  background-color: transparent;
+  color: #d11f74;
+  border: 1px solid transparent;
+}
+
+.commentBtn>button:focus {
+  outline: none !important;
+}
+
+/* .commentSection {} */
+
+.eachComment {
+  padding: 8px 20px;
+  background-color: #EFF2F5;
+  border-radius: 15px;
+  width: 90%;
+  margin: 0 auto 8px;
+}
+
+.commentUserInfo {
+  display: flex;
+}
+
+.commentUserInfo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+
+.commentUserSidetext {
+  margin-left: 1rem;
+}
+
+.commentUserSidetext .knfe1 {
+  font-weight: 600;
+  font-size: 13px;
+  color: black;
+  transition: .2s ease-in;
+}
+
+.commentUserSidetext .knfe1:hover {
+  color: #747474;
+}
+
+.commentUserSidetext .knfe2 {
+  font-weight: 200;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .homepage {
+    margin: 0;
+  }
+
+  .postContainer {
+    width: 100%;
+  }
+
+  .postSection {
+    border-radius: 0;
+    margin-bottom: 15px;
+  }
+
+  .postEditDeleteBtn {
+    position: absolute;
+    margin-top: 2.5rem;
+    right: 12px;
+  }
+
+  .postFormBtns {
+    display: block;
+  }
+
+  .custom-file-upload {
+    width: 100%;
+    text-align: center;
+  }
+
+  .postFormBtn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .dropdown-menu {
+    width: 23rem;
+    transform: translate3d(-193px, 40px, 0px) !important;
+  }
+}
+
+/* DISCOVER PAGE */
+
+.discoverContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: black;
+}
+
+.discoverElm {
+  display: flex;
+  width: 20rem;
+  border: 1.5px solid black;
+  margin: 1rem 2rem;
+  box-shadow: 5px 5px 10px var(--main-color-tuentione);
+}
+
+.discoverElm img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/*Edit profile page*/
+
+.editProfileButton {
+  background-color: #C4FEF4;
+  font-size: 25px;
+  border: 2px solid black;
+}
+
+/*FOOTER*/
+
+.footer {
+  background-color: #C4FEF4;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1.5px solid black;
+}
