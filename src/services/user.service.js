@@ -36,6 +36,10 @@ class UserService {
         return this.axios.put(`/${eachUser_id}/addFriend`)
     }
 
+    delFriend(eachUser_id) {
+        return this.axios.put(`/${eachUser_id}/delFriend`)
+    }
+
 }
 
 const userService = new UserService()
