@@ -2,7 +2,7 @@ import axios from 'axios'
 
 class PrivateService {
     constructor() {
-        this.axios = axios.create({ baseURL: 'http://localhost:5005/api/private' })
+        this.axios = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/private` })
 
         this.axios.interceptors.request.use((config) => {
 

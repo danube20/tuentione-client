@@ -2,7 +2,7 @@ import axios from 'axios'
 
 class PosteosService {
     constructor() {
-        this.axios = axios.create({ baseURL: 'http://localhost:5005/api/post' })
+        this.axios = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/post` })
 
         this.axios.interceptors.request.use((config) => {
 
