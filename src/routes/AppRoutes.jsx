@@ -9,7 +9,6 @@ import PrivateRoute from './PrivateRoutes'
 import FriendsPage from '../pages/FriendsPage/FriendsPage'
 import PrivatePage from '../pages/PrivatePage/PrivatePage'
 
-
 const AppRoutes = () => {
     return (
         <Routes>

@@ -58,8 +58,6 @@ const RegisterForm = () => {
             .catch(err => console.log(err))
     }
 
-
-
     return (
         <Form onSubmit={handleSubmit}>
             <InputGroup className="mb-3">
@@ -138,7 +136,6 @@ const RegisterForm = () => {
             </Form.Group>
 
             <button className="btn btn-primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
-
 
         </Form>
     )

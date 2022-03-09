@@ -3,7 +3,6 @@ import userService from "../../services/user.service"
 import FriendsCard from "../FriendsCard/FriendsCard"
 import { AuthContext } from "../../context/auth.context"
 
-
 const FriendsList = () => {
 
     const { user } = useContext(AuthContext)
