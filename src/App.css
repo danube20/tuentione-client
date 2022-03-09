@@ -15,12 +15,6 @@
 
 body {
   background-color: #f0f2f5;
-  /* #E78F8E */
-  /* #FF9FB2 */
-  /* #D66BA0 */
-  /* #F4ACB7 
-  #FFCAD4 */
-  /* #EAC9C1 */
 }
 
 a {
@@ -40,6 +34,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .navBg {
   background-color: var(--main-color-tuentione);
+}
+
+.navBg img {
+  width: 130px;
+  margin-right: 1rem;
 }
 
 .me-auto {
@@ -114,9 +113,15 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-size: 24px;
   margin-bottom: -8px;
+  text-transform: capitalize;
+  font-size: 2rem;
 }
 
-.profileInfo p:nth-child(2) {
+.profileInfo a {
+  font-size: 1rem;
+}
+
+.profileInfo p:nth-child(3) {
   font-weight: 200;
   color: gray;
 }
@@ -124,6 +129,26 @@ p, h1, h2, h3, h4, h5, h6 {
 .profileEditBtn {
   position: absolute;
   right: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.profilePrivateButton {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 5px 3px;
+  background-color: white;
+  color: #ff3f61;
+  font-weight: 600;
+  transition: .2s ease-out;
+}
+
+.profilePrivateButton:hover {
+  border: 1px solid #ff3f61;
+}
+
+.profilePrivateButton::after {
+  content: ' Fanáticos zone';
 }
 
 .profileButton::after {
@@ -645,6 +670,18 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 }
 
+/* PRIVATE PAGE */
+
+.privateContainer {
+  margin-top: 1rem !important;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.privatePostList {
+  margin-top: 1rem;
+}
+
 /* FOOTER */
 
 .footer {
@@ -653,4 +690,5 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   text-align: center;
   box-shadow: var(--box-shadow);
+  padding: 1rem 0;
 }

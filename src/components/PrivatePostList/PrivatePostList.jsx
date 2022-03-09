@@ -7,10 +7,9 @@ const PrivatePostList = () => {
     const { privatePosts } = useContext(PostsContext)
 
     return (
-        <>
-            <h1>Lista de post privados</h1>
+        <div className="privatePostList">
             {privatePosts?.map((eachPrivatePost, idx) => <EachPrivatePost key={idx} eachPrivatePost={eachPrivatePost} />)}
-        </>
+        </div>
     )
 }
 

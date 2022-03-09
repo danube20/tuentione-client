@@ -26,7 +26,7 @@ const ProfilePage = () => {
             <div className="containerEditProfile">
                 <img src={userInfo.imageURL} alt="imagen de usuari@" />
                 <div className="profileInfo">
-                    <p>{userInfo.nameUser} {userInfo.surnameUser}</p>
+                    <p>{userInfo.nameUser} {userInfo.surnameUser} {username && user?.username !== username && <Link to={`/${userInfo?.username}/privado`}><button className="profilePrivateButton"><i class="fa-solid fa-fire"></i></button></Link>}</p>
                     <p>@{userInfo?.username}</p>
                     <p className="biography"><span>Biografía</span><br />{userInfo.biography} </p>
                     <p><i className="fa-solid fa-cake-candles"></i> {userInfo.birthday?.slice(0, 10)}</p>
@@ -37,11 +37,10 @@ const ProfilePage = () => {
                     </Link>
                     {
                         username && user?.username !== username &&
-                        <Link to={`/${userInfo?.username}/privado`}>
-                            <button className="profilePrivateButton">Fanáticos no more</button>
-                        </Link>
+                        <>
+                            <AddDelFriendBtn />
+                        </>
                     }
-                    {username && user?.username !== username && <AddDelFriendBtn />}
                 </div>
             </div>
             <div className="mobileProfilePage profileBodyContainer">

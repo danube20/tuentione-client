@@ -12,7 +12,7 @@ const NavBar = () => {
             <Navbar className="navBg" expand="lg">
                 <Container>
                     <Link to='/home'>
-                        <Navbar.Brand>Tuentione</Navbar.Brand>
+                        <img src="https://res.cloudinary.com/andresgarcia/image/upload/v1646858585/logos_andre%CC%81s_1_dwdoyn.png" alt="tuentione logo" />
                     </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
