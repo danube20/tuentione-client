@@ -11,6 +11,8 @@ const ProfilePageEdit = () => {
 
     const [ProfilePageEdit, setProfilePageEdit] = useState({})
     const [loadingImage, setLoadingImage] = useState(false)
+    const { user, setUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     useEffect(() => {
         userService
@@ -18,10 +20,6 @@ const ProfilePageEdit = () => {
             .then(({ data }) => setProfilePageEdit(data))
             .catch(err => console.log(err))
     }, [username])
-
-    const { user, setUser } = useContext(AuthContext)
-
-    const navigate = useNavigate()
 
     const handleInputChange = e => {
         const { name, value } = e.target
@@ -32,7 +30,6 @@ const ProfilePageEdit = () => {
     }
 
     const uploadPostImage = e => {
-
         setLoadingImage(true)
 
         const uploadData = new FormData()
@@ -49,6 +46,7 @@ const ProfilePageEdit = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
+
         userService
             .editProfileUser(username, ProfilePageEdit)
             .then(({ data }) => setUser({ ...user, data }))
@@ -117,7 +115,7 @@ const ProfilePageEdit = () => {
                 />
             </Form.Group>
 
-            <button className="editProfileButton" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
+            <button className="editProfileButton" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Editar'}</button>
             <hr />
         </Form>
     )

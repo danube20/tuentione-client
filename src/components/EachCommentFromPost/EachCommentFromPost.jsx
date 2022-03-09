@@ -1,5 +1,4 @@
-import { useEffect } from "react"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Modal } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/auth.context"
@@ -36,7 +35,7 @@ function EachCommentFromPost({ eachComment, postId }) {
 
     return <div className="eachComment">
         <div className="commentUserInfo">
-            <img src={oneUser?.imageURL} alt="profile image" />
+            <img src={oneUser?.imageURL} alt="profile user" />
             <div className="commentUserSidetext">
                 <Link to={`/perfil/${oneUser?.username}`}>
                     <p className="knfe1">{oneUser?.nameUser} {oneUser?.surnameUser}</p>

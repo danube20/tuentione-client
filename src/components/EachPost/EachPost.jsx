@@ -27,8 +27,6 @@ const EachPost = ({ eachPost }) => {
             .catch(err => console.log(err))
     }
 
-    // console.log('eachpost => ', eachPost.comments)
-
     const handleModalClose = () => setShowModal(false)
     const handleModalOpen = () => setShowModal(true)
 
@@ -39,6 +37,7 @@ const EachPost = ({ eachPost }) => {
             .then(() => refreshPosts())
             .catch(err => console.log(err))
     }
+
     const delLike = () => {
         setIsPressed(false)
         posteosService
@@ -52,7 +51,7 @@ const EachPost = ({ eachPost }) => {
             <div className="p-3">
                 <div className="postUserContainer">
                     <div className="postUserInfo">
-                        <img src={eachPost.user?.imageURL} alt="profile image" />
+                        <img src={eachPost.user?.imageURL} alt="profile user" />
                         <div className="postUserSidetext">
                             <Link to={`/perfil/${eachPost.user?.username}`}>
                                 <p>{eachPost.user?.nameUser} {eachPost.user?.surnameUser}</p>
@@ -75,8 +74,11 @@ const EachPost = ({ eachPost }) => {
                     <p>{eachPost.status}</p>
                 </div>
             </div>
-            {eachPost.imageURL !== '' ? <img src={eachPost.imageURL} alt='post image' /> : <p></p>}
+            {eachPost.imageURL !== '' ? <img src={eachPost.imageURL} alt='post upload' /> : <p></p>}
             <div className="p-3">
+                <div className="likesCounter">
+                    {eachPost.likes.length > 0 ? <p><i class="fa-regular fa-thumbs-up"></i> {eachPost.likes.length}</p> : <></>}
+                </div>
                 <hr />
                 <div className="postBtns">
                     {

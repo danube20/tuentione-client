@@ -49,7 +49,7 @@ const EditCommentForm = ({ closeModal, refreshPosts, refreshPrivatePosts, commen
                 />
             </Form.Group>
 
-            <button className="postFormBtn" type="submit">Enviar</button>
+            <button className="postFormBtn" type="submit">Editar</button>
 
         </Form>
     )

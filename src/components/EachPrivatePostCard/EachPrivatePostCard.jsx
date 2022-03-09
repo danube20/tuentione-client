@@ -7,7 +7,6 @@ import DropDownComment from "../DropdownComment/DropDownComment"
 import { PostsContext } from '../../context/posts.context'
 import EachPrivateCommentFromPost from "../EachPrivateCommentFromPost/EachPrivateCommentFromPost"
 import EditPostForm from "../EditPostForm/EditPostForm"
-import { useEffect } from "react"
 import commentServices from "../../services/comment.service"
 
 const EachPrivatePostCard = ({ privatePostInfo }) => {
@@ -22,7 +21,6 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
             .pullOneUserPrivatePost(privatePostInfo._id)
             .then(() => {
                 privatePostInfo.comments.map(eachComment => commentServices.removeOneComment(eachComment._id))
-
                 return privateService.deleteOnePost(privatePostInfo._id)
             })
             .then(() => refreshPrivatePosts())
@@ -40,6 +38,7 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
             .then(() => refreshPrivatePosts())
             .catch(err => console.log(err))
     }
+
     const delLike = () => {
         setIsPressed(false)
         privateService
@@ -53,7 +52,7 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
             <div className="p-3">
                 <div className="postUserContainer">
                     <div className="postUserInfo">
-                        <img src={privatePostInfo.user?.imageURL} alt="profile image" />
+                        <img src={privatePostInfo.user?.imageURL} alt="profile user" />
                         <div className="postUserSidetext">
                             <Link to={`/perfil/${privatePostInfo.user?.username}`}>
                                 <p>{privatePostInfo.user?.nameUser} {privatePostInfo.user?.surnameUser}</p>
@@ -76,7 +75,7 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
                     <p>{privatePostInfo.status}</p>
                 </div>
             </div>
-            {privatePostInfo.imageURL !== '' ? <img src={privatePostInfo.imageURL} alt='post image' /> : <p></p>}
+            {privatePostInfo.imageURL !== '' ? <img src={privatePostInfo.imageURL} alt='post private' /> : <p></p>}
             <div className="p-3">
                 <hr />
                 <div className="postBtns">

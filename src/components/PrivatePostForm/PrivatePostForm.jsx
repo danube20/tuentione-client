@@ -77,7 +77,6 @@ const PrivatePost = () => {
 
                     <button className="postFormBtn" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
                 </div>
-
             </Form>
         </div>
     )

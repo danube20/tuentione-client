@@ -64,6 +64,7 @@ const EditPostForm = ({ closeModal, postId }) => {
                 closeModal()
             })
             .catch(err => console.log(err))
+
         privateService
             .editOnePost(postId, editPrivatePost)
             .then(() => {

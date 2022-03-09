@@ -10,7 +10,6 @@ import AddDelFriendBtn from "../../components/AddDelFriendBtn/AddDelFriendBtn"
 const ProfilePage = () => {
 
     const { username } = useParams()
-
     const [userInfo, setUserInfo] = useState({})
     const { user } = useContext(AuthContext)
 
@@ -24,7 +23,7 @@ const ProfilePage = () => {
     return (
         <>
             <div className="containerEditProfile">
-                <img src={userInfo.imageURL} alt="imagen de usuari@" />
+                <img src={userInfo.imageURL} alt="user profile" />
                 <div className="profileInfo">
                     <p>{userInfo.nameUser} {userInfo.surnameUser} {username && user?.username !== username && <Link to={`/${userInfo?.username}/privado`}><button className="profilePrivateButton"><i class="fa-solid fa-fire"></i></button></Link>}</p>
                     <p>@{userInfo?.username}</p>
@@ -33,7 +32,10 @@ const ProfilePage = () => {
                 </div>
                 <div className="profileEditBtn">
                     <Link to={`/${userInfo?.username}/editar`}>
-                        {username && username && user?.username === username && <button className="profileButton"><i className="fa-solid fa-pencil"></i></button>}
+                        {
+                            username && username && user?.username === username &&
+                            <button className="profileButton"><i className="fa-solid fa-pencil"></i></button>
+                        }
                     </Link>
                     {
                         username && user?.username !== username &&

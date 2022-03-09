@@ -1,5 +1,4 @@
-import { createContext, useEffect } from "react"
-import { useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import posteosService from "../services/posteos.service"
 import privateService from "../services/private.service"
 
@@ -26,6 +25,7 @@ const PostsWrapper = (props) => {
 
     useEffect(() => refreshPosts(), [])
     useEffect(() => refreshPrivatePosts(), [])
+
     return (
         <PostsContext.Provider value={{ posts, privatePosts, refreshPosts, refreshPrivatePosts }}>
             {props.children}

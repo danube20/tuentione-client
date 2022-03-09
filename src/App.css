@@ -33,11 +33,18 @@ p, h1, h2, h3, h4, h5, h6 {
 /* NAVBAR */
 
 .navBg {
-  background-color: var(--main-color-tuentione);
+  background-color: #25b6b8;
+}
+
+.navbar-nav a {
+  color: white;
+  font-weight: 400;
+  padding-top: 8px;
+  margin-right: 1rem;
 }
 
 .navBg img {
-  width: 130px;
+  width: 150px;
   margin-right: 1rem;
 }
 
@@ -45,18 +52,29 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 0 !important
 }
 
-/* LOGIN PAGE */
+.selected {
+  color: #fff;
+  border-bottom: rgba(255, 255, 255, 0.639) solid 2px;
+  padding-top: 8px;
+}
 
 .loginRegister {
   margin-left: auto;
   display: flex;
 }
 
+.loginRegister a {
+  color: white;
+  margin-right: 1rem;
+}
+
+/* LOGIN PAGE */
+
+
 .login input {
   background-color: rgb(219, 219, 219);
   /* border: 1.5px solid #C4FEF4; */
   /* box-shadow: 5px 5px 10px var(--main-color-tuentione); */
-  transition: background-color .5s;
 }
 
 .login input::placeholder {
@@ -187,12 +205,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .profilePosts {
   width: 70%;
   margin-left: 3rem;
-}
-
-.loginRegister a>p,
-.loginRegister span {
-  color: var(--navbar-color);
-  cursor: pointer;
 }
 
 .dropdown-menu {
@@ -398,6 +410,10 @@ p, h1, h2, h3, h4, h5, h6 {
 .postStatus p {
   margin-top: 2rem;
   font-size: 19px;
+}
+
+.likesCounter {
+  margin-left: 1rem;
 }
 
 .btnDelEdit {
