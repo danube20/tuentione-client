@@ -7,7 +7,7 @@ const LoginPage = () => {
     return (
         <div className="minHeight">
             <h1>Login</h1>
-            <p>¿No tienes cuenta?</p><Link to={`/registro`}>Registrate</Link>
+            <p>¿No tienes cuenta?</p><Link to={`/registro`}><p>Registrate</p></Link>
             <Container>
                 <LoginForm />
             </Container>
