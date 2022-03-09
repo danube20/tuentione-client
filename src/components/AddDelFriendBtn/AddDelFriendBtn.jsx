@@ -5,7 +5,7 @@ import userService from "../../services/user.service"
 
 const AddDelFriendBtn = () => {
 
-    const [checkFriend, setCheckFriend] = useState([])
+    const [checkFriend, setCheckFriend] = useState()
     const { user } = useContext(AuthContext)
     const { username } = useParams()
     const [isFriend, setIsFriend] = useState(false)
@@ -17,14 +17,23 @@ const AddDelFriendBtn = () => {
             .catch(err => console.log(err))
     }
     useEffect(() => loadUsers(), [])
+    let response
 
     const checkAllFriends = () => {
-        checkFriend.friends.map(eachFriend => eachFriend._id === user?._id ? setIsFriend(true) : setIsFriend(false))
+        const recognizeFriend = checkFriend.friends.filter(eachFriend => eachFriend._id === user?._id)
+
+        if (recognizeFriend.length === 0) { response = false } else { response = true }
+
+        return response
     }
-    useEffect(() => checkAllFriends, [])
+
+    if (checkFriend) {
+        checkAllFriends()
+    }
 
     const addFriend = () => {
         setIsFriend(true)
+        response = true
         userService
             .addFriend(checkFriend?._id)
             .then(() => loadUsers())
@@ -33,6 +42,7 @@ const AddDelFriendBtn = () => {
 
     const delFriend = () => {
         setIsFriend(false)
+        response = false
         userService
             .delFriend(checkFriend?._id)
             .then(() => loadUsers())
@@ -40,11 +50,11 @@ const AddDelFriendBtn = () => {
     }
 
     return (
-        !isFriend
+        !response
             ?
             <button className='discoverAddBtn' onClick={() => addFriend()}>Añadir</button>
             :
-            <button className='discoverDelBtn' onClick={() => delFriend()}><i class="fa-solid fa-user-xmark"></i></button>
+            <button className='discoverDelBtn' onClick={() => delFriend()}><i className="fa-solid fa-user-xmark"></i></button>
     )
 }
 
