@@ -16,7 +16,7 @@ const FriendsCard = ({ eachFriend }) => {
     }, [])
 
     return (
-        <div className="friendsCardContainer">
+        <div className="friendsCardContainer friendsCardProfile">
             <Link className="friendsCardBtn" to={`/perfil/${userInfo?.username}`}>
                 <img src={userInfo?.imageURL} alt="imagen de usuari@" />
             </Link>

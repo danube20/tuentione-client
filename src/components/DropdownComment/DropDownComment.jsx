@@ -55,7 +55,7 @@ const DropDownComment = ({ postId, refreshPosts, refreshPrivatePosts }) => {
 
                 <Dropdown.Divider />
 
-                <button className="btn btn-primary" type="submit">Enviar</button>
+                <button className="commentSubmitBtn" type="submit">Enviar</button>
             </Form>
         </DropdownButton>
     )

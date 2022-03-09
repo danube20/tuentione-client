@@ -2,7 +2,7 @@
 
 :root {
   --main-color-tuentione: #C4FEF4;
-  --main-color-private: ff334e;
+  --main-color-private: #ff334e;
   --navbar-color: rgba(0, 0, 0, .55);
   --box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
 }
@@ -400,7 +400,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .commentBtn>button {
   margin-left: 10px;
-  color: #f72585;
+  color: #9b9b9b;
   font-weight: 600;
   border-color: transparent;
   transition: .2s ease-out;
@@ -413,8 +413,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .commentBtn>button:hover {
-  background-color: transparent;
-  color: #d11f74;
+  background-color: #828282;
+  color: white;
   border: 1px solid transparent;
 }
 
@@ -422,7 +422,7 @@ p, h1, h2, h3, h4, h5, h6 {
   outline: none !important;
 }
 
-/* .commentSection {} */
+/* COMMENT SECTION */
 
 .eachComment {
   padding: 8px 20px;
@@ -462,6 +462,19 @@ p, h1, h2, h3, h4, h5, h6 {
 .commentUserSidetext .knfe2 {
   font-weight: 200;
   font-size: 12px;
+}
+
+.commentSubmitBtn {
+  background-color: #828282;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 4px 8px;
+  transition: .1s ease-out;
+}
+
+.commentSubmitBtn:hover {
+  background-color: #353535;
 }
 
 @media screen and (max-width: 768px) {
@@ -516,9 +529,15 @@ p, h1, h2, h3, h4, h5, h6 {
 .discoverElm {
   display: flex;
   width: 20rem;
-  border: 1.5px solid black;
+  border: 1px solid transparent;
+  border-radius: 5px;
   margin: 1rem 2rem;
-  box-shadow: 5px 5px 10px var(--main-color-tuentione);
+  box-shadow: var(--box-shadow);
+  transition: .2s ease-in-out;
+}
+
+.discoverElm:hover {
+  background-color: #dadada;
 }
 
 .discoverElm img {
@@ -526,6 +545,51 @@ p, h1, h2, h3, h4, h5, h6 {
   height: 80px;
   object-fit: cover;
 }
+
+.discoverSidetext {
+  align-self: center;
+  margin-left: 5px;
+}
+
+.discoverSidetext a {
+  color: black;
+}
+
+.discoverSidetext p {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.discoverAddBtn {
+  background-color: transparent;
+  border: 2px solid #25b6b8;
+  border-radius: 3px;
+  color: #25b6b8;
+  font-weight: 600;
+  padding: 4px 16px;
+  margin-bottom: 5px;
+  transition: .1s ease-out;
+}
+
+.discoverDelBtn {
+  color: #e31847;
+  font-weight: 600;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 5px 3px;
+  transition: .3s ease-out;
+}
+
+.discoverDelBtn::after {
+  content: ' Eliminar';
+}
+
+.discoverDelBtn:hover {
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+
 
 /* EDIT PROFILE PAGE */
 
@@ -556,5 +620,5 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   text-align: center;
-  border: 1.5px solid #cccaca;
+  box-shadow: var(--box-shadow);
 }

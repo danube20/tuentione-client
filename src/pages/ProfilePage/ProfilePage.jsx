@@ -1,12 +1,11 @@
-import { useContext } from "react"
-import { useEffect } from "react"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import EachOwnedPost from "../../components/EachOwnedPost/EachOwnedPost"
 import PostForm from "../../components/PostForm/PostForm"
 import { AuthContext } from "../../context/auth.context"
 import userService from "../../services/user.service"
 import FriendsList from '../../components/FriendsList/FriendsList'
+import AddDelFriendBtn from "../../components/AddDelFriendBtn/AddDelFriendBtn"
 
 const ProfilePage = () => {
 
@@ -42,6 +41,7 @@ const ProfilePage = () => {
                             <button className="profilePrivateButton">Zona Privada</button>
                         </Link>
                     }
+                    {username && user?.username !== username && <AddDelFriendBtn />}
                 </div>
             </div>
             <div className="mobileProfilePage profileBodyContainer">
