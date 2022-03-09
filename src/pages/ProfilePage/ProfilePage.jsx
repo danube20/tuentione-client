@@ -29,11 +29,11 @@ const ProfilePage = () => {
                     <p>{userInfo.nameUser} {userInfo.surnameUser}</p>
                     <p>@{userInfo?.username}</p>
                     <p className="biography"><span>Biografía</span><br />{userInfo.biography} </p>
-                    <p><i class="fa-solid fa-cake-candles"></i> {userInfo.birthday?.slice(0, 10)}</p>
+                    <p><i className="fa-solid fa-cake-candles"></i> {userInfo.birthday?.slice(0, 10)}</p>
                 </div>
                 <div className="profileEditBtn">
                     <Link to={`/${userInfo?.username}/editar`}>
-                        {username && username && user?.username === username && <button className="profileButton"><i class="fa-solid fa-pencil"></i></button>}
+                        {username && username && user?.username === username && <button className="profileButton"><i className="fa-solid fa-pencil"></i></button>}
                     </Link>
                     {
                         username && user?.username !== username &&
@@ -45,10 +45,11 @@ const ProfilePage = () => {
                 </div>
             </div>
             <div className="mobileProfilePage profileBodyContainer">
-                <div className="">
+                <div className="profileFriendsList">
+                    <p>Lista de amigos</p>
                     <FriendsList />
                 </div>
-                <div className="mobileProfilePage">
+                <div className="mobileProfilePage profilePosts">
                     <PostForm />
                     <hr />
                     <EachOwnedPost />

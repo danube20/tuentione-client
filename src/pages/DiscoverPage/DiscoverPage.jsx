@@ -51,7 +51,7 @@ const DiscoverPage = () => {
                                                 ?
                                                 <button className='discoverAddBtn' onClick={() => addFriend(eachUser._id)}>Añadir</button>
                                                 :
-                                                <button className='discoverDelBtn' onClick={() => delFriend(eachUser._id)}><i class="fa-solid fa-user-xmark"></i></button>
+                                                <button className='discoverDelBtn' onClick={() => delFriend(eachUser._id)}><i className="fa-solid fa-user-xmark"></i></button>
                                         }
                                     </>
                                 }

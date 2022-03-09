@@ -35,7 +35,7 @@ const DropDownComment = ({ postId, refreshPosts, refreshPrivatePosts }) => {
     return (
         <DropdownButton
             variant="outline-secondary"
-            title={<i class="fa-solid fa-comment"></i>}
+            title={<i className="fa-solid fa-comment"></i>}
             id="input-group-dropdown-1"
             className="commentBtn"
         >

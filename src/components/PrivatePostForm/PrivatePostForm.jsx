@@ -73,7 +73,7 @@ const PrivatePost = () => {
 
                 <div className="postFormBtns">
                     <Form.Group controlId="postImage" className="mb-3 postUploadImage">
-                        <label for="file-upload" class="custom-file-upload"><i class="fa fa-cloud-upload"></i> Subir foto</label>
+                        <label for="file-upload" className="custom-file-upload"><i className="fa fa-cloud-upload"></i> Subir foto</label>
                         <input id="file-upload" type="file" onChange={uploadPostImage} />
                     </Form.Group>
 

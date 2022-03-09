@@ -82,9 +82,9 @@ const EachPost = ({ eachPost }) => {
                     {
                         !isPressed
                             ?
-                            <button className="postLikeBtn" onClick={() => addLike()}><i class="fa-solid fa-thumbs-up"></i> Me gusta</button>
+                            <button className="postLikeBtn" onClick={() => addLike()}><i className="fa-solid fa-thumbs-up"></i> Me gusta</button>
                             :
-                            <button className="postDislikeBtn" onClick={() => delLike()}><i class="fa-solid fa-thumbs-up"></i> Me gusta</button>
+                            <button className="postDislikeBtn" onClick={() => delLike()}><i className="fa-solid fa-thumbs-up"></i> Me gusta</button>
                     }
                     {<DropDownComment postId={eachPost?._id} refreshPosts={refreshPosts} />}
                 </div>

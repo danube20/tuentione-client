@@ -1,24 +1,35 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useState } from "react"
 import userService from "../../services/user.service"
-import FriendsCard from "../FriendsCard/FriendsCard"
-import { AuthContext } from "../../context/auth.context"
+import { Link, useParams } from "react-router-dom"
 
 const FriendsList = () => {
 
-    const { user } = useContext(AuthContext)
     const [userFriends, setUserFriends] = useState([])
+    const { username } = useParams()
 
     useEffect(() => {
         userService
-            .getOneUserById(user?._id)
+            .getOneUser(username)
             .then(({ data }) => setUserFriends(data.friends))
             .catch(err => console.log(err))
-    }, [user])
+    }, [username])
 
     return (
         <div className="friendsListContainer">
             {
-                userFriends?.map((eachFriend) => <FriendsCard eachFriend={eachFriend} />)
+                userFriends?.map((eachFriend) => {
+                    return <div className="friendsCardContainer friendsCardProfile">
+                        <Link className="friendsCardBtn" to={`/perfil/${eachFriend?.username}`}>
+                            <img src={eachFriend?.imageURL} alt="imagen de usuari@" />
+                        </Link>
+                        <div className="friendsCardUserInfo">
+                            <Link className="friendsCardBtn" to={`/perfil/${eachFriend?.username}`}>
+                                <p>{eachFriend?.nameUser} {eachFriend?.surnameUser}</p>
+                                <p>@{eachFriend.username}</p>
+                            </Link>
+                        </div>
+                    </div>
+                })
             }
         </div>
     )
