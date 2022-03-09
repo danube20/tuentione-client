@@ -207,36 +207,50 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/*PROFILES PAGES*/
+/* FRIENDS PAGE */
 
-.containerFP {
-
+.friendsListContainer {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 1rem auto;
+  padding-left: 8rem;
 }
 
 .friendsCardContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   color: black;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin: 1rem 2rem;
+  width: 25%;
 }
 
-.friendsCardImage {
-  width: 100%;
+.friendsCardContainer img {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 
-.friendsCardElem {
-  display: flex;
-  width: auto;
-  border: 1.5px solid black;
-  margin: 1rem 2rem;
-  box-shadow: 5px 5px 10px var(--main-color-tuentione);
+.friendsCardUserInfo {
+  margin: 0 0 0 15px;
 }
 
+.friendsCardUserInfo p:nth-child(1) {
+  color: black;
+  text-transform: capitalize;
+  font-weight: 400;
+}
 
-.buttonAmigos {}
+.friendsCardUserInfo p:nth-child(2) {
+  font-size: 14px;
+  color: gray;
+  font-weight: 200;
+  text-transform: lowercase;
+}
 
 /* HOMEPAGE */
 
@@ -513,7 +527,7 @@ p, h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
 }
 
-/*Edit profile page*/
+/* EDIT PROFILE PAGE */
 
 .editProfileButton {
   background-color: #C4FEF4;
@@ -521,7 +535,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border: 2px solid black;
 }
 
-/*FOOTER*/
+/* FOOTER */
 
 .footer {
   background-color: #C4FEF4;

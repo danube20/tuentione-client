@@ -17,7 +17,7 @@ const FriendsList = () => {
     }, [user])
 
     return (
-        <div>
+        <div className="friendsListContainer">
             {
                 userFriends?.map((eachFriend) => <FriendsCard eachFriend={eachFriend} />)
             }

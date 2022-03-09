@@ -15,29 +15,17 @@ const FriendsCard = ({ eachFriend }) => {
             .catch(err => console.log(err))
     }, [])
 
-    // return (
-    // <>
-    //     <img src={userInfo.imageURL}></img>
-    //     <p>{userInfo.nameUser}</p>
-    //     <p>{userInfo.surnameUser}</p>
-    //     <button type="submit">Ver perfil</button>
-
-    // </>
-
     return (
         <div className="friendsCardContainer">
-            <div className="friendsCardImage">
+            <Link className="friendsCardBtn" to={`/perfil/${userInfo?.username}`}>
                 <img src={userInfo?.imageURL} alt="imagen de usuari@" />
+            </Link>
+            <div className="friendsCardUserInfo">
+                <Link className="friendsCardBtn" to={`/perfil/${userInfo?.username}`}>
+                    <p>{userInfo?.nameUser} {userInfo?.surnameUser}</p>
+                    <p>@{userInfo.username}</p>
+                </Link>
             </div>
-
-            <div className="friendsCardElem">
-                <p>{userInfo?.nameUser} {userInfo?.surnameUser} </p>
-            </div>
-
-            <div className="buttonAmigos">
-                <Link to={`/perfil/amigos${userInfo?.username}`}>Ver Perfil </Link>
-            </div>
-            <hr />
         </div>
     )
 }

@@ -41,7 +41,7 @@ function EachCommentFromPost({ eachComment, postId }) {
                 <Link to={`/perfil/${oneUser?.username}`}>
                     <p className="knfe1">{oneUser?.nameUser} {oneUser?.surnameUser}</p>
                 </Link>
-                <p className="knfe2">{eachComment.createdAt?.slice(0, 10)}</p>
+                <p className="knfe2">{eachComment?.createdAt?.slice(0, 10)}</p>
                 <div>
                     <p>{eachComment.text}</p>
                 </div>

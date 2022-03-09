@@ -6,6 +6,7 @@ import EachOwnedPost from "../../components/EachOwnedPost/EachOwnedPost"
 import PostForm from "../../components/PostForm/PostForm"
 import { AuthContext } from "../../context/auth.context"
 import userService from "../../services/user.service"
+import FriendsList from '../../components/FriendsList/FriendsList'
 
 const ProfilePage = () => {
 
@@ -35,29 +36,23 @@ const ProfilePage = () => {
                     <Link to={`/${userInfo?.username}/editar`}>
                         {username && username && user?.username === username && <button className="profileButton"><i class="fa-solid fa-pencil"></i></button>}
                     </Link>
-                    <Link to={`/${userInfo?.username}/privado`}>
-                        <button className="profilePrivateButton">Zona Privada</button>
-                    </Link>
-                    <Link to={`/perfil/amigos${userInfo?.username}`}>Amig@s </Link>
+                    {
+                        username && user?.username !== username &&
+                        <Link to={`/${userInfo?.username}/privado`}>
+                            <button className="profilePrivateButton">Zona Privada</button>
+                        </Link>
+                    }
                 </div>
             </div>
-            <div className="mobileProfilePage profileBodyContainer row">
-                <div className="col-5">
+            <div className="mobileProfilePage profileBodyContainer">
+                <div className="">
+                    <FriendsList />
                 </div>
-                <div className="mobileProfilePage col-7">
+                <div className="mobileProfilePage">
                     <PostForm />
                     <hr />
                     <EachOwnedPost />
                 </div>
-
-                {/* 
-                TODO pasarle a friends card EACH de los friends
-                {userInfo.friends.length > 0 &&
-                    userInfo.friends.map(friend => {
-                        <FriendsCard friend={friend} key={friend._id} />
-                    })
-                } */}
-
             </div>
         </>
     )

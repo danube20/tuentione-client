@@ -86,7 +86,7 @@ const EachPost = ({ eachPost }) => {
                             :
                             <button className="postDislikeBtn" onClick={() => delLike()}><i class="fa-solid fa-thumbs-up"></i> Me gusta</button>
                     }
-                    {<DropDownComment postId={eachPost._id} refreshPosts={refreshPosts} />}
+                    {<DropDownComment postId={eachPost?._id} refreshPosts={refreshPosts} />}
                 </div>
                 <hr />
                 <Modal show={showModal} onHide={handleModalClose} size="lg">
@@ -98,7 +98,7 @@ const EachPost = ({ eachPost }) => {
                     </Modal.Body>
                 </Modal>
                 <div>
-                    {eachPost.comments?.map(eachComment => <EachCommentFromPost postId={eachPost._id} eachComment={eachComment} key={eachComment._id} />)}
+                    {eachPost.comments?.map(eachComment => <EachCommentFromPost postId={eachPost?._id} eachComment={eachComment} key={eachComment?._id} />)}
                 </div>
             </div>
         </div >
