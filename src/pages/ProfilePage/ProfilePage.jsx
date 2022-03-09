@@ -38,7 +38,7 @@ const ProfilePage = () => {
                     {
                         username && user?.username !== username &&
                         <Link to={`/${userInfo?.username}/privado`}>
-                            <button className="profilePrivateButton">Zona Privada</button>
+                            <button className="profilePrivateButton">Fanáticos no more</button>
                         </Link>
                     }
                     {username && user?.username !== username && <AddDelFriendBtn />}
