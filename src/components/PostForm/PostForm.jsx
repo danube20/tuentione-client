@@ -56,7 +56,6 @@ const Posteos = () => {
         })
     }
 
-
     return (
         <div className="postForm">
             <Form onSubmit={handleSubmit}>

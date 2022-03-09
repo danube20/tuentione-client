@@ -8,7 +8,6 @@ const DropDownComment = ({ postId, refreshPosts, refreshPrivatePosts }) => {
 
     const [postComment, setPostComment] = useState({ text: '' })
 
-
     const handleInputChange = e => {
         const { name, value } = e.target
         setPostComment({

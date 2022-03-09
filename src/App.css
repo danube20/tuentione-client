@@ -594,9 +594,23 @@ p, h1, h2, h3, h4, h5, h6 {
 /* EDIT PROFILE PAGE */
 
 .editProfileButton {
-  background-color: #C4FEF4;
-  font-size: 25px;
+  background-color: #828282;
+  color: white;
+  padding: 4px 8px;
+  font-size: 15px;
   border: 2px solid black;
+  margin-left: 10px;
+  font-weight: 600;
+  border-color: transparent;
+}
+
+.editProfileButton:hover {
+  background-color: transparent;
+  color: #828282
+}
+
+.editProfileButton {
+  border-radius: 5px;
 }
 
 /* FOOTER */
