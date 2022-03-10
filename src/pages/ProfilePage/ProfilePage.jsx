@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import EachOwnedPost from "../../components/EachOwnedPost/EachOwnedPost"
 import PostForm from "../../components/PostForm/PostForm"
 import { AuthContext } from "../../context/auth.context"
@@ -20,12 +20,16 @@ const ProfilePage = () => {
             .catch(err => console.log(err))
     }, [username])
 
+    const location = useLocation()
+    const isMyProfile = location.pathname.includes(user?.username)
+    const newClass = isMyProfile ? 'ownProfilePrivateButton' : 'profilePrivateButton'
+
     return (
         <>
             <div className="containerEditProfile">
                 <img src={userInfo.imageURL} alt="user profile" />
                 <div className="profileInfo">
-                    <p>{userInfo.nameUser} {userInfo.surnameUser} {username && user?.username !== username && <Link to={`/${userInfo?.username}/privado`}><button className="profilePrivateButton"><i class="fa-solid fa-fire"></i></button></Link>}</p>
+                    <p>{userInfo.nameUser} {userInfo.surnameUser} <Link to={`/${userInfo?.username}/privado`}><button className={newClass}><i class="fa-solid fa-fire"></i></button></Link></p>
                     <p>@{userInfo?.username}</p>
                     <p className="biography"><span>Biografía</span><br />{userInfo.biography} </p>
                     <p><i className="fa-solid fa-cake-candles"></i> {userInfo.birthday?.slice(0, 10)}</p>
@@ -51,8 +55,13 @@ const ProfilePage = () => {
                     <FriendsList />
                 </div>
                 <div className="mobileProfilePage profilePosts">
-                    <PostForm />
-                    <hr />
+                    {
+                        username && user?.username === username &&
+                        <>
+                            <PostForm />
+                            <hr />
+                        </>
+                    }
                     <EachOwnedPost />
                 </div>
             </div>

@@ -1,17 +1,22 @@
 import { useContext } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link, useLocation } from "react-router-dom"
 import { AuthContext } from "../../context/auth.context"
 
 const NavBar = () => {
 
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext)
 
+    const location = useLocation()
+    const isPrivate = location.pathname.includes('privado')
+    const newClass = isPrivate ? 'navBgPrivate' : 'navBg'
+    const newImg = isPrivate ? 'https://res.cloudinary.com/andresgarcia/image/upload/v1646907456/logoprivate_tkn0q0.png' : 'https://res.cloudinary.com/andresgarcia/image/upload/v1646860182/logo_blanco_andres_me6ild.png'
+
     return (
-        <Navbar className="navBg" expand="lg">
+        <Navbar className={newClass} expand="lg">
             <Container>
                 <Link to='/home'>
-                    <img src="https://res.cloudinary.com/andresgarcia/image/upload/v1646860182/logo_blanco_andres_me6ild.png" alt="tuentione logo" />
+                    <img src={newImg} alt="tuentione logo" />
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

@@ -16,9 +16,9 @@ const PostsWrapper = (props) => {
             .catch(error => console.log(error))
     }
 
-    const refreshPrivatePosts = () => {
+    const refreshPrivatePosts = (postId) => {
         privateService
-            .getAllPosts()
+            .getPostById(postId)
             .then(({ data }) => setPrivatePosts(data))
             .catch(error => console.log(error))
     }

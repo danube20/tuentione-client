@@ -31,20 +31,37 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
     const handleModalClose = () => setShowModal(false)
     const handleModalOpen = () => setShowModal(true)
 
+    let response
+    const checkAllLikes = () => {
+        const recognizeLike = privatePostInfo.likes?.filter(eachLike => eachLike === user?._id)
+
+        if (recognizeLike?.length === 0) { response = false } else { response = true }
+
+        return response
+    }
+
+    console.log('privpost =>', privatePostInfo);
+
+    if (privatePostInfo) {
+        checkAllLikes()
+    }
+
     const addLike = () => {
-        setIsPressed(true)
+        response = true
         privateService
             .pushOneUserLike(privatePostInfo._id)
-            .then(() => refreshPrivatePosts())
+            .then(() => refreshPrivatePosts(privatePostInfo._id))
             .catch(err => console.log(err))
+        refreshPrivatePosts(privatePostInfo._id)
     }
 
     const delLike = () => {
-        setIsPressed(false)
+        response = false
         privateService
             .pullOneUserLike(privatePostInfo._id)
-            .then(() => refreshPrivatePosts())
+            .then(() => refreshPrivatePosts(privatePostInfo._id))
             .catch(err => console.log(err))
+        refreshPrivatePosts(privatePostInfo._id)
     }
 
     return (
@@ -77,10 +94,13 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
             </div>
             {privatePostInfo.imageURL !== '' ? <img src={privatePostInfo.imageURL} alt='post private' /> : <p></p>}
             <div className="p-3">
+                <div className="likesCounter">
+                    {privatePostInfo.likes?.length > 0 ? <p><i style={{ color: '#ff334e' }} className="fa-solid fa-fire-flame-curved"></i> {privatePostInfo.likes?.length}</p> : <></>}
+                </div>
                 <hr />
                 <div className="postBtns">
                     {
-                        !isPressed
+                        !response
                             ?
                             <button className="postLikeBtn" onClick={() => addLike()}><i className="fa-solid fa-thumbs-up"></i> Me gusta</button>
                             :

@@ -30,8 +30,21 @@ const EachPost = ({ eachPost }) => {
     const handleModalClose = () => setShowModal(false)
     const handleModalOpen = () => setShowModal(true)
 
+    let response
+    const checkAllLikes = () => {
+        const recognizeLike = eachPost.likes.filter(eachLike => eachLike === user?._id)
+
+        if (recognizeLike.length === 0) { response = false } else { response = true }
+
+        return response
+    }
+
+    if (eachPost) {
+        checkAllLikes()
+    }
+
     const addLike = () => {
-        setIsPressed(true)
+        response = true
         posteosService
             .pushOneUserLike(eachPost._id)
             .then(() => refreshPosts())
@@ -39,7 +52,7 @@ const EachPost = ({ eachPost }) => {
     }
 
     const delLike = () => {
-        setIsPressed(false)
+        response = false
         posteosService
             .pullOneUserLike(eachPost._id)
             .then(() => refreshPosts())
@@ -82,7 +95,7 @@ const EachPost = ({ eachPost }) => {
                 <hr />
                 <div className="postBtns">
                     {
-                        !isPressed
+                        !response
                             ?
                             <button className="postLikeBtn" onClick={() => addLike()}><i className="fa-solid fa-thumbs-up"></i> Me gusta</button>
                             :

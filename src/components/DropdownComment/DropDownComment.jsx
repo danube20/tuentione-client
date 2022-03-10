@@ -28,7 +28,7 @@ const DropDownComment = ({ postId, refreshPosts, refreshPrivatePosts }) => {
             .then(() => {
                 setPostComment({ text: '' })
                 refreshPosts()
-                refreshPrivatePosts()
+                refreshPrivatePosts(postId)
             })
     }
 
