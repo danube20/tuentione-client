@@ -260,12 +260,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .biography span {
   font-weight: 300;
-  <<<<<<< HEAD color: #c7c7c7
+  color: #c7c7c7
 }
 
 .biographyInside {
-  color: black=======color: #c7c7c7;
-  >>>>>>>e0e14ad (fixed bugs and added styles)
+  scolor: #c7c7c7;
 }
 
 .profileBodyContainer {
