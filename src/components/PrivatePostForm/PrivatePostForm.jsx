@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap"
 import uploadService from "../../services/upload.service"
 import privateService from "../../services/private.service"
 import { PostsContext } from "../../context/posts.context"
+import { useLocation } from "react-router-dom"
 
 const PrivatePost = () => {
 
@@ -54,8 +55,12 @@ const PrivatePost = () => {
         })
     }
 
+    const location = useLocation()
+    const isPrivate = location.pathname.includes('privado')
+    const newClass = isPrivate ? 'postPrivateForm' : 'postForm'
+
     return (
-        <div className="postForm">
+        <div className={newClass}>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Control

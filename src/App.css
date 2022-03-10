@@ -435,6 +435,12 @@ p, h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--box-shadow);
 }
 
+.postPrivateForm {
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 0 0 1px rgba(255, 51, 78, 0.3);
+}
+
 .postFormBtns {
   display: flex;
 }
@@ -468,6 +474,17 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: white;
   box-shadow: var(--box-shadow);
   margin-bottom: 2rem;
+}
+
+.postPrivateShadow {
+  box-shadow: 0 0 0 1px rgba(255, 51, 78, 0.3);
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.postPrivateShadow img {
+  width: 100%;
 }
 
 .postSection hr {

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Modal } from "react-bootstrap"
 import { AuthContext } from "../../context/auth.context"
 import privateService from "../../services/private.service"
@@ -14,7 +14,6 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
     const { user } = useContext(AuthContext)
     const { refreshPrivatePosts, refreshPosts } = useContext(PostsContext)
     const [showModal, setShowModal] = useState(false)
-    const [isPressed, setIsPressed] = useState(false)
 
     const delPost = () => {
         privateService
@@ -40,8 +39,6 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
         return response
     }
 
-    console.log('privpost =>', privatePostInfo);
-
     if (privatePostInfo) {
         checkAllLikes()
     }
@@ -64,8 +61,12 @@ const EachPrivatePostCard = ({ privatePostInfo }) => {
         refreshPrivatePosts(privatePostInfo._id)
     }
 
+    const location = useLocation()
+    const isPrivate = location.pathname.includes('privado')
+    const newClass = isPrivate ? 'postPrivateShadow' : 'postSection'
+
     return (
-        <div className="postSection" key={privatePostInfo._id}>
+        <div className={newClass} key={privatePostInfo._id}>
             <div className="p-3">
                 <div className="postUserContainer">
                     <div className="postUserInfo">
