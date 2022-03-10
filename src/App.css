@@ -89,7 +89,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* LOGIN PAGE */
 
-
 .login input {
   background-color: white;
   /* border: 1.5px solid #C4FEF4; */
@@ -232,8 +231,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .ownProfilePrivateButton::after {
   content: ' Mi zona privada';
 }
-
-
 
 .profileButton::after {
   content: ' Editar perfil';
