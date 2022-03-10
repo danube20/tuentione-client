@@ -137,7 +137,7 @@ const RegisterForm = () => {
             </Form.Group>
 
             <button className="btn btn-primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
-
+            <hr />
         </Form>
     )
 }

@@ -96,7 +96,7 @@ const ProfilePageEdit = () => {
 
             <Form.Group className='mb-3'>
                 <Form.Label><strong>Biografía:</strong></Form.Label>
-                <Form.Control
+                <Form.Control className="biographyInside"
                     type='text'
                     name='biography'
                     value={ProfilePageEdit.biography}

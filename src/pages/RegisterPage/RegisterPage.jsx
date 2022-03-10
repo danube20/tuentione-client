@@ -5,6 +5,7 @@ const RegisterPage = () => {
     return (
         <>
             <h1>Registro</h1>
+            <hr />
             <Container>
                 <RegisterForm />
             </Container>

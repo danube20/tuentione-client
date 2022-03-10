@@ -7,11 +7,22 @@ const LoginPage = () => {
     return (
         <div className="minHeight">
             <h1>Login</h1>
-            <p>¿No tienes cuenta?</p><Link to={`/registro`}><p>Registrate</p></Link>
+            <hr />
             <Container>
                 <LoginForm />
             </Container>
+            <div className="borderLogin">
+                <div className="loginQuestion">
+                    <p><strong>¿No tienes cuenta?</strong></p>
+                </div>
+                <hr />
+                <div className="registratePart">
+                    <Link to={`/registro`}><strong>Regístrate</strong></Link>
+                </div>
+            </div>
+
         </div>
+
     )
 }
 

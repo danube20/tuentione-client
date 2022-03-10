@@ -36,7 +36,6 @@ const NavBar = () => {
                                 <>
                                     <NavLink to='/'>Iniciar sesión</NavLink>
                                     <NavLink to='/registro'>Registro</NavLink>
-
                                 </>
                         }
                     </div>
