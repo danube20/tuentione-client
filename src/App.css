@@ -15,12 +15,6 @@
 
 body {
   background-color: #f0f2f5;
-  /* #E78F8E */
-  /* #FF9FB2 */
-  /* #D66BA0 */
-  /* #F4ACB7 
-  #FFCAD4 */
-  /* #EAC9C1 */
 }
 
 a {
@@ -39,25 +33,46 @@ p, h1, h2, h3, h4, h5, h6 {
 /* NAVBAR */
 
 .navBg {
-  background-color: var(--main-color-tuentione);
+  background-color: #25b6b8;
+}
+
+.navbar-nav a {
+  color: white;
+  font-weight: 400;
+  margin-right: 1rem;
+}
+
+.navBg img {
+  width: 150px;
+  margin-right: 1rem;
 }
 
 .me-auto {
   margin: 0 !important
 }
 
-/* LOGIN PAGE */
+.selected {
+  color: #fff;
+  border-bottom: rgba(255, 255, 255, 0.639) solid 2px;
+}
 
 .loginRegister {
   margin-left: auto;
   display: flex;
 }
 
+.loginRegister a {
+  color: white;
+  margin-right: 1rem;
+}
+
+/* LOGIN PAGE */
+
+
 .login input {
   background-color: rgb(219, 219, 219);
   /* border: 1.5px solid #C4FEF4; */
   /* box-shadow: 5px 5px 10px var(--main-color-tuentione); */
-  transition: background-color .5s;
 }
 
 .login input::placeholder {
@@ -114,9 +129,15 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-size: 24px;
   margin-bottom: -8px;
+  text-transform: capitalize;
+  font-size: 2rem;
 }
 
-.profileInfo p:nth-child(2) {
+.profileInfo a {
+  font-size: 1rem;
+}
+
+.profileInfo p:nth-child(3) {
   font-weight: 200;
   color: gray;
 }
@@ -124,6 +145,26 @@ p, h1, h2, h3, h4, h5, h6 {
 .profileEditBtn {
   position: absolute;
   right: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.profilePrivateButton {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 5px 3px;
+  background-color: white;
+  color: #ff3f61;
+  font-weight: 600;
+  transition: .2s ease-out;
+}
+
+.profilePrivateButton:hover {
+  border: 1px solid #ff3f61;
+}
+
+.profilePrivateButton::after {
+  content: ' Fanáticos zone';
 }
 
 .profileButton::after {
@@ -162,12 +203,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .profilePosts {
   width: 70%;
   margin-left: 3rem;
-}
-
-.loginRegister a>p,
-.loginRegister span {
-  color: var(--navbar-color);
-  cursor: pointer;
 }
 
 .dropdown-menu {
@@ -373,6 +408,10 @@ p, h1, h2, h3, h4, h5, h6 {
 .postStatus p {
   margin-top: 2rem;
   font-size: 19px;
+}
+
+.likesCounter {
+  margin-left: 1rem;
 }
 
 .btnDelEdit {
@@ -645,6 +684,18 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 }
 
+/* PRIVATE PAGE */
+
+.privateContainer {
+  margin-top: 1rem !important;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.privatePostList {
+  margin-top: 1rem;
+}
+
 /* FOOTER */
 
 .footer {
@@ -653,4 +704,5 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   text-align: center;
   box-shadow: var(--box-shadow);
+  padding: 1rem 0;
 }

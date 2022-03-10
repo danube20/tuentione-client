@@ -1,11 +1,9 @@
-import { useEffect } from "react"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Modal } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/auth.context"
 import { PostsContext } from "../../context/posts.context"
 import commentServices from "../../services/comment.service"
-import posteosService from "../../services/posteos.service"
 import privateService from "../../services/private.service"
 import userService from "../../services/user.service"
 import EditCommentForm from "../EdtCommentForm/EditCommentForm"
@@ -37,7 +35,7 @@ function EachPrivateCommentFromPost({ eachComment, postId }) {
 
     return <div className="eachComment">
         <div className="commentUserInfo">
-            <img src={oneUser?.imageURL} alt="profile image" />
+            <img src={oneUser?.imageURL} alt="profile user" />
             <div className="commentUserSidetext">
                 <Link to={`/perfil/${oneUser?.username}`}>
                     <p className="knfe1">{oneUser?.nameUser} {oneUser?.surnameUser}</p>
@@ -48,8 +46,14 @@ function EachPrivateCommentFromPost({ eachComment, postId }) {
                 </div>
             </div>
         </div>
-        {eachComment.user && eachComment.user && user?._id === eachComment.user && <button className='btnDelEdit' onClick={delComment}>Eliminar</button>}
-        {eachComment.user && eachComment.user && user?._id === eachComment.user && <button className='btnDelEdit' onClick={handleModalOpen}>Editar</button>}
+        {
+            eachComment.user && eachComment.user && user?._id === eachComment.user &&
+            <button className='btnDelEdit' onClick={delComment}>Eliminar</button>
+        }
+        {
+            eachComment.user && eachComment.user && user?._id === eachComment.user &&
+            <button className='btnDelEdit' onClick={handleModalOpen}>Editar</button>
+        }
         <Modal show={showModal} onHide={handleModalClose} size="lg">
             <Modal.Header closeButton>
                 <Modal.Title>Editar comentario</Modal.Title>

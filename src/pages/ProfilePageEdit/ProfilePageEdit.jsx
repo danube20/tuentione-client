@@ -4,9 +4,7 @@ const ProfilePageEdit = () => {
     return (
         <>
             <h1>Edita tu perfil</h1>
-
             <ProfileEdit />
-
         </>
     )
 }

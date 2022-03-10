@@ -20,7 +20,7 @@ const FriendsList = () => {
                 userFriends?.map((eachFriend) => {
                     return <div className="friendsCardContainer friendsCardProfile">
                         <Link className="friendsCardBtn" to={`/perfil/${eachFriend?.username}`}>
-                            <img src={eachFriend?.imageURL} alt="imagen de usuari@" />
+                            <img src={eachFriend?.imageURL} alt="user profile" />
                         </Link>
                         <div className="friendsCardUserInfo">
                             <Link className="friendsCardBtn" to={`/perfil/${eachFriend?.username}`}>

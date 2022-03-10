@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import { Form } from "react-bootstrap"
 import uploadService from "../../services/upload.service"
-import { AuthContext } from "../../context/auth.context"
 import privateService from "../../services/private.service"
 import { PostsContext } from "../../context/posts.context"
 
@@ -13,7 +12,6 @@ const PrivatePost = () => {
     })
 
     const [loadingImage, setLoadingImage] = useState(false)
-    const { user } = useContext(AuthContext)
     const { refreshPrivatePosts } = useContext(PostsContext)
 
     const handleInputChange = e => {
@@ -79,7 +77,6 @@ const PrivatePost = () => {
 
                     <button className="postFormBtn" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
                 </div>
-
             </Form>
         </div>
     )

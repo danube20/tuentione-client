@@ -9,9 +9,7 @@ const PostList = () => {
     return (
         <>
             {
-                posts.map((eachPost, idx) => {
-                    return <EachPost key={idx} eachPost={eachPost} />
-                })
+                posts.map((eachPost, idx) => <EachPost key={idx} eachPost={eachPost} />)
             }
         </>
     )

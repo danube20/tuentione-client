@@ -6,7 +6,7 @@ class CommentServices {
 
         this.axios.interceptors.request.use((config) => {
 
-            const storedToken = localStorage.getItem("authToken");
+            const storedToken = localStorage.getItem("authToken")
 
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }

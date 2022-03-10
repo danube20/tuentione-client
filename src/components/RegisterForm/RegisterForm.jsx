@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Form, InputGroup } from 'react-bootstrap'
+import { Form, InputGroup } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import authService from '../../services/auth.service'
 import uploadService from '../../services/upload.service'
@@ -19,12 +19,15 @@ const RegisterForm = () => {
         }
     )
 
+    const { username, nameUser, surnameUser, email, password, birthday } = registerForm
+
     const [loadingImage, setLoadingImage] = useState(false)
 
     const navigate = useNavigate()
 
     const handleInputChange = e => {
         const { name, value } = e.target
+
         setRegisterForm({
             ...registerForm,
             [name]: value
@@ -32,7 +35,6 @@ const RegisterForm = () => {
     }
 
     const uploadProfileImage = e => {
-
         setLoadingImage(true)
 
         const uploadData = new FormData()
@@ -67,7 +69,7 @@ const RegisterForm = () => {
                     required
                     placeholder="Username"
                     name='username'
-                    value={registerForm.username}
+                    value={username}
                     onChange={handleInputChange}
                     maxLength='10'
                 />
@@ -78,7 +80,7 @@ const RegisterForm = () => {
                 <Form.Control
                     type='text'
                     name='nameUser'
-                    value={registerForm.nameUser}
+                    value={nameUser}
                     onChange={handleInputChange}
                     placeholder='Introduce tu nombre'
                     maxLength='40'
@@ -90,7 +92,7 @@ const RegisterForm = () => {
                 <Form.Control
                     type='text'
                     name='surnameUser'
-                    value={registerForm.surnameUser}
+                    value={surnameUser}
                     onChange={handleInputChange}
                     placeholder='Introduce tu apellido'
                     maxLength='40'
@@ -101,7 +103,7 @@ const RegisterForm = () => {
                 <Form.Label><strong>Email:</strong></Form.Label>
                 <Form.Control type='email'
                     name='email'
-                    value={registerForm.email}
+                    value={email}
                     onChange={handleInputChange}
                     placeholder='Correo electronico'
                     required
@@ -113,7 +115,7 @@ const RegisterForm = () => {
                 <Form.Control
                     type='password'
                     name='password'
-                    value={registerForm.password}
+                    value={password}
                     onChange={handleInputChange}
                     placeholder='Contraseña'
                     required
@@ -125,9 +127,8 @@ const RegisterForm = () => {
                 <Form.Control
                     type='date'
                     name='birthday'
-                    value={registerForm.birthday}
+                    value={birthday}
                     onChange={handleInputChange}
-                    placeholder='Contraseña'
                 />
             </Form.Group>
 

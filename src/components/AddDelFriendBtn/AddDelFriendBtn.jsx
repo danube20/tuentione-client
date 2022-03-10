@@ -8,7 +8,6 @@ const AddDelFriendBtn = () => {
     const [checkFriend, setCheckFriend] = useState()
     const { user } = useContext(AuthContext)
     const { username } = useParams()
-    const [isFriend, setIsFriend] = useState(false)
 
     const loadUsers = () => {
         userService
@@ -17,8 +16,8 @@ const AddDelFriendBtn = () => {
             .catch(err => console.log(err))
     }
     useEffect(() => loadUsers(), [])
-    let response
 
+    let response
     const checkAllFriends = () => {
         const recognizeFriend = checkFriend.friends.filter(eachFriend => eachFriend._id === user?._id)
 
@@ -32,7 +31,6 @@ const AddDelFriendBtn = () => {
     }
 
     const addFriend = () => {
-        setIsFriend(true)
         response = true
         userService
             .addFriend(checkFriend?._id)
@@ -41,7 +39,6 @@ const AddDelFriendBtn = () => {
     }
 
     const delFriend = () => {
-        setIsFriend(false)
         response = false
         userService
             .delFriend(checkFriend?._id)

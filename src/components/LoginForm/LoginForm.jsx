@@ -12,8 +12,8 @@ const LoginForm = () => {
             password: ''
         }
     )
-    const navigate = useNavigate()
 
+    const navigate = useNavigate()
     const { storeToken, authenticateUser } = useContext(AuthContext)
 
     const handleInputChange = e => {
@@ -23,6 +23,7 @@ const LoginForm = () => {
             [name]: value
         })
     }
+
     const handleSubmit = e => {
         e.preventDefault()
 
@@ -37,7 +38,6 @@ const LoginForm = () => {
     }
 
     return (
-
         <Form className="login" onSubmit={handleSubmit}>
             <Form.Group className='mb-3'>
                 <Form.Label>Email:</Form.Label>
