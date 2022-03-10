@@ -115,8 +115,7 @@ const ProfilePageEdit = () => {
                 />
             </Form.Group>
 
-            <button className="editProfileButton" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Editar'}</button>
-            <hr />
+            <button className="loginButton" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Editar'}</button>
         </Form>
     )
 }

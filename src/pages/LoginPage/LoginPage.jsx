@@ -6,7 +6,7 @@ const LoginPage = () => {
 
     return (
         <Container>
-            <div className="minHeight">
+            <div className="minHeight loginPage">
                 <h1>Login</h1>
                 <hr />
 

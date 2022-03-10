@@ -90,20 +90,18 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* LOGIN PAGE */
 
+.loginPage {
+  padding: 6rem 0;
+  margin-bottom: 1.6rem;
+}
+
 .login input {
   background-color: white;
-  /* border: 1.5px solid #C4FEF4; */
-  /* box-shadow: 5px 5px 10px var(--main-color-tuentione); */
 }
 
 .login input::placeholder {
   color: white;
 }
-
-/* .login input:focus {
-  background-color: #C4FEF4;
-  box-shadow: 5px 5px 10px var(--main-color-tuentione)
-} */
 
 .loginQuestion {
   display: flex;
@@ -727,6 +725,7 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   justify-content: center;
   color: black;
+  margin: 2rem 0 4rem 0;
 }
 
 .discoverElm {
@@ -796,24 +795,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* EDIT PROFILE PAGE */
 
-.editProfileButton {
-  background-color: #828282;
-  color: white;
-  padding: 4px 8px;
-  font-size: 15px;
-  border: 2px solid black;
-  margin-left: 10px;
-  font-weight: 600;
-  border-color: transparent;
-}
-
-.editProfileButton:hover {
-  background-color: transparent;
-  color: #828282
-}
-
-.editProfileButton {
-  border-radius: 5px;
+.editProfile {
+  margin: 5.8rem auto;
+  width: 70%;
 }
 
 /* PRIVATE PAGE */
