@@ -25,7 +25,7 @@ const EachOwnedPost = () => {
                     ownedPosts.reverse().map((eachPost, idx) => <EachOwnedPostList key={idx} eachPost={eachPost} />)
                     :
                     <div className="profileNoPost">
-                        <p>!<span>{username}</span> aún no ha publicado posts!</p>
+                        <p>¡<span>{username}</span> aún no ha publicado posts!</p>
                     </div>
             }
         </>
