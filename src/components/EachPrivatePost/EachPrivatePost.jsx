@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import EachPrivatePostCard from '../../components/EachPrivatePostCard/EachPrivatePostCard.jsx'
 import commentServices from '../../services/comment.service.js'
 import privateService from '../../services/private.service.js'

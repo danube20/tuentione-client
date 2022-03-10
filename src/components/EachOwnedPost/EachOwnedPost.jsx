@@ -8,7 +8,7 @@ const EachOwnedPost = () => {
     const [ownedPosts, setOwnedPosts] = useState([])
     const { username } = useParams()
 
-    useEffect(() => {
+    useEffect(() => { // Get posts id from users data
         userService
             .getOneUser(username)
             .then(({ data }) => {

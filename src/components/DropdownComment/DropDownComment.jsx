@@ -16,7 +16,7 @@ const DropDownComment = ({ postId, refreshPosts, refreshPrivatePosts }) => {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { // Create new comment and push the id into the current post
         e.preventDefault()
 
         commentServices

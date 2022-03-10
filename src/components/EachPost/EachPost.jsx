@@ -14,11 +14,10 @@ const EachPost = ({ eachPost }) => {
     const { user } = useContext(AuthContext)
     const { refreshPosts } = useContext(PostsContext)
     const [showModal, setShowModal] = useState(false)
-    const [isPressed, setIsPressed] = useState(false)
 
     const delPost = () => {
         posteosService
-            .pullOneUserPost(eachPost._id)
+            .pullOneUserPost(eachPost._id) // Pull comment id from current post and then remove the comment
             .then(() => {
                 eachPost.comments.map(eachComment => commentServices.removeOneComment(eachComment._id))
                 return posteosService.deleteOnePost(eachPost._id)
@@ -31,7 +30,7 @@ const EachPost = ({ eachPost }) => {
     const handleModalOpen = () => setShowModal(true)
 
     let response
-    const checkAllLikes = () => {
+    const checkAllLikes = () => { // Filter to check if the current user is in the likes array
         const recognizeLike = eachPost.likes.filter(eachLike => eachLike === user?._id)
 
         if (recognizeLike.length === 0) { response = false } else { response = true }

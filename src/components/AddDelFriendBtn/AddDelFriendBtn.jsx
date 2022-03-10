@@ -9,6 +9,7 @@ const AddDelFriendBtn = () => {
     const { user } = useContext(AuthContext)
     const { username } = useParams()
 
+    // Get user information through params
     const loadUsers = () => {
         userService
             .getOneUser(username)
@@ -17,6 +18,7 @@ const AddDelFriendBtn = () => {
     }
     useEffect(() => loadUsers(), [])
 
+    // Filter to check if the current logged user is in the array of the params user
     let response
     const checkAllFriends = () => {
         const recognizeFriend = checkFriend.friends.filter(eachFriend => eachFriend._id === user?._id)
@@ -30,7 +32,7 @@ const AddDelFriendBtn = () => {
         checkAllFriends()
     }
 
-    const addFriend = () => {
+    const addFriend = () => { // Push the user to the friend's array
         response = true
         userService
             .addFriend(checkFriend?._id)
@@ -38,7 +40,7 @@ const AddDelFriendBtn = () => {
             .catch(err => console.log(err))
     }
 
-    const delFriend = () => {
+    const delFriend = () => { // Pull the user from the friend's array
         response = false
         userService
             .delFriend(checkFriend?._id)

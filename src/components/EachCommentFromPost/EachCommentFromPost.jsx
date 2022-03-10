@@ -22,7 +22,7 @@ function EachCommentFromPost({ eachComment, postId }) {
             .catch(err => console.log(err))
     }, [])
 
-    const delComment = () => {
+    const delComment = () => { // Pull comment id from the current post and then deletes it
         posteosService
             .pullOneComment(postId, eachComment._id)
             .then(() => commentServices.removeOneComment(eachComment._id))

@@ -16,7 +16,7 @@ function EachPrivateCommentFromPost({ eachComment, postId }) {
     const { refreshPrivatePosts, refreshPosts } = useContext(PostsContext)
 
     useEffect(() => {
-        userService
+        userService // Get users from each post
             .getOneUserById(eachComment.user)
             .then(({ data }) => setOneUser(data))
             .catch(err => console.log(err))
