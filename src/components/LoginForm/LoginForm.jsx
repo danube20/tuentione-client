@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Button, Form } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import authService from "../../services/auth.service"
 import { AuthContext } from '../../context/auth.context'
@@ -38,6 +38,7 @@ const LoginForm = () => {
     }
 
     return (
+
         <Form className="login" onSubmit={handleSubmit}>
             <Form.Group className='mb-3'>
                 <Form.Label><strong>Email:</strong></Form.Label>
@@ -62,9 +63,11 @@ const LoginForm = () => {
                 />
             </Form.Group>
 
-            <Button type='submit' className='btn btn-primary button'>Enviar</Button>
+            <button type='submit' className='loginButton'>Enviar</button>
 
         </Form>
+
+
     )
 }
 

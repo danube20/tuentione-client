@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Form, InputGroup } from 'react-bootstrap'
+import { Container, Form, InputGroup } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import authService from '../../services/auth.service'
 import uploadService from '../../services/upload.service'
@@ -61,6 +61,7 @@ const RegisterForm = () => {
     }
 
     return (
+
         <Form onSubmit={handleSubmit}>
             <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
@@ -136,9 +137,10 @@ const RegisterForm = () => {
                 <Form.Control type="file" onChange={uploadProfileImage} />
             </Form.Group>
 
-            <button className="btn btn-primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
+            <button className="loginButton" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'Enviar'}</button>
             <hr />
         </Form>
+
     )
 }
 
