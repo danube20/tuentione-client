@@ -4,9 +4,10 @@ import RegisterForm from "../../components/RegisterForm/RegisterForm"
 const RegisterPage = () => {
     return (
         <>
-            <h1>Registro</h1>
-            <hr />
             <Container>
+                <h1>Registro</h1>
+                <hr />
+
                 <RegisterForm />
             </Container>
         </>
