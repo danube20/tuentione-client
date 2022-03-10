@@ -20,7 +20,7 @@ const PrivatePostList = () => {
             {
                 privatePosts.length > 0
                     ?
-                    privatePosts?.map((eachPrivatePost, idx) => <EachPrivatePost key={idx} eachPrivatePost={eachPrivatePost} />)
+                    privatePosts?.reverse().map((eachPrivatePost, idx) => <EachPrivatePost key={idx} eachPrivatePost={eachPrivatePost} />)
                     :
                     <div className="profileNoPost">
                         <p>!<span>{username}</span> aún no ha publicado posts!</p>
