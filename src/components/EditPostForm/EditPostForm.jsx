@@ -12,7 +12,7 @@ const EditPostForm = ({ closeModal, postId }) => {
     const [loadingImage, setLoadingImage] = useState(false)
     const { refreshPosts, refreshPrivatePosts } = useContext(PostsContext)
 
-    useEffect(() => {
+    useEffect(() => { // Convert postId into data
         posteosService
             .getOnePost(postId)
             .then(({ data }) => setEditPost(data))
