@@ -58,7 +58,6 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-right: 1rem;
 }
 
-
 .me-auto {
   margin: 0 !important
 }
@@ -104,31 +103,32 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .loginQuestion {
-  display: flex;
-  justify-content: center;
-  margin: 20px 5px 13px 30px;
-}
-
-.borderLogin {
   border: 2px solid black;
   border-radius: 10px;
   width: 20%;
   margin: 0 auto;
-}
-
-.registratePart {
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  background-size: 10%;
-  background-color: #25b6b8;
-  width: 120px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  box-shadow: 2px 2px #0f7475;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
 }
 
-.registratePart a {
+.loginQuestion hr {
+  width: 100%;
+}
+
+.loginQuestion a {
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  background-color: #25b6b8;
   color: white;
+  border-radius: 5px;
+  transition: .3s ease-out;
+}
+
+.loginQuestion a:hover {
+  background-color: #2cd1d3;
 }
 
 .button {
@@ -147,11 +147,6 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
 }
-
-/* .button:focus {
-  background-color: #C4FEF4;
-  color: white;
-} */
 
 .btn-primary button {
   background-color: black;
