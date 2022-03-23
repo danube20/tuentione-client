@@ -12,19 +12,14 @@ const LoginPage = () => {
 
                 <LoginForm />
 
-                <div className="borderLogin">
-                    <div className="loginQuestion">
-                        <p><strong>¿No tienes cuenta?</strong></p>
-                    </div>
+                <div className="loginQuestion">
+                    <p>¿No tienes cuenta?</p>
                     <hr />
-                    <div className="registratePart">
-                        <Link to={`/registro`}><strong>Regístrate</strong></Link>
-                    </div>
+                    <Link to={`/registro`}>Regístrate</Link>
                 </div>
 
             </div>
         </Container>
-
     )
 }
 
