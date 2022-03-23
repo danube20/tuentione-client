@@ -89,7 +89,7 @@ const EachPost = ({ eachPost }) => {
             {eachPost.imageURL !== '' ? <img src={eachPost.imageURL} alt='post upload' /> : <p></p>}
             <div className="p-3">
                 <div className="likesCounter">
-                    {eachPost.likes.length > 0 ? <p><i class="fa-regular fa-thumbs-up"></i> {eachPost.likes.length}</p> : <></>}
+                    {eachPost.likes.length > 0 ? <p><i className="fa-regular fa-thumbs-up"></i> {eachPost.likes.length}</p> : <></>}
                 </div>
                 <hr />
                 <div className="postBtns">

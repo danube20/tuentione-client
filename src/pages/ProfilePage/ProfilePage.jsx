@@ -44,7 +44,7 @@ const ProfilePage = () => {
             <div className="containerEditProfile">
                 <img src={userInfo.imageURL} alt="user profile" />
                 <div className="profileInfo">
-                    <p>{userInfo.nameUser} {userInfo.surnameUser} {response || username === user?.username ? <Link to={`/${userInfo?.username}/privado`}><button className={newClass}><i class="fa-solid fa-fire"></i></button></Link> : ''}</p>
+                    <p>{userInfo.nameUser} {userInfo.surnameUser} {response || username === user?.username ? <Link to={`/${userInfo?.username}/privado`}><button className={newClass}><i className="fa-solid fa-fire"></i></button></Link> : ''}</p>
                     <p>@{userInfo?.username}</p>
                     <p className="biography"><span>Biografía</span><br />{userInfo.biography} </p>
                     <p><i className="fa-solid fa-cake-candles"></i> {userInfo.birthday?.slice(0, 10)}</p>
