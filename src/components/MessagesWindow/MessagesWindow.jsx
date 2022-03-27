@@ -7,7 +7,7 @@ const MessagesWindow = () => {
 
     const { user } = useContext(AuthContext)
     const [userInfo, setUserInfo] = useState({})
-    const chat = user?._id === undefined ? '' : 'MessagesWindow'
+    const chat = user?._id === undefined ? 'displayNone' : 'MessagesWindow'
     let icon = false
 
     useEffect(() => {

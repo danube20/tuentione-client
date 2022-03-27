@@ -27,6 +27,7 @@ const NavBar = () => {
                                 <NavLink className={({ isActive }) => isActive ? "selected" : ""} to='/home'>Home</NavLink>
                                 <NavLink className={({ isActive }) => isActive ? "selected" : ""} to='/descubrir'>Descubrir</NavLink>
                                 <NavLink className={({ isActive }) => isActive ? "selected" : ""} to={`/perfil/${user?.username}`}>Perfil</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? "selected" : ""} to={`/${user?.username}/mensajes`}>Mensajes</NavLink>
                             </>
                         }
                     </Nav>

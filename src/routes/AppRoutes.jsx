@@ -7,6 +7,7 @@ import ProfilePageEdit from '../pages/ProfilePageEdit/ProfilePageEdit'
 import DiscoverPage from '../pages/DiscoverPage/DiscoverPage'
 import PrivateRoute from './PrivateRoutes'
 import PrivatePage from '../pages/PrivatePage/PrivatePage'
+import MessagesPage from '../pages/MessagesPage/MessagesPage'
 
 const AppRoutes = () => {
     return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
             <Route path='/descubrir' element={<DiscoverPage />} />
             {/* </Route> */}
             <Route path='/:username/privado' element={<PrivatePage />} />
+            <Route path='/:username/mensajes' element={<MessagesPage />} />
         </Routes>
     )
 }

@@ -12,7 +12,7 @@ const FriendsChatWindow = ({ eachFriend }) => {
     }, [])
     return (
         <>
-            <div className="chatOneFriend" onClick={() => console.log(friendInfo.nameUser)}>
+            <div className="chatOneFriend">
                 <img src={friendInfo?.imageURL} alt="friend photo" />
                 <div className="chatOneFriendInfo">
                     <p>{friendInfo.nameUser} {friendInfo.surnameUser}</p>

@@ -31,6 +31,10 @@ p, h1, h2, h3, h4, h5, h6 {
   min-height: 81.4vh;
 }
 
+.displayNone {
+  display: none;
+}
+
 /* NAVBAR */
 
 .navBg {
@@ -92,7 +96,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .MessagesWindow {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 1rem;
   width: 16%;
   height: 3rem;
   background-color: white;
@@ -101,6 +105,7 @@ p, h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   transition: .2s ease-out;
   overflow: hidden;
+  display: block;
 }
 
 .MessagesWindow::-webkit-scrollbar {
@@ -185,6 +190,19 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 9rem;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* MESSAGES PAGE */
+
+.messagesPage {
+  display: flex;
+  height: 87vh;
+}
+
+.friendsListChat {
+  width: 20%;
+  padding-top: 10px;
+  overflow: auto;
 }
 
 /* LOGIN PAGE */
