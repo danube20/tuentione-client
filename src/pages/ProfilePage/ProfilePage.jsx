@@ -37,8 +37,6 @@ const ProfilePage = () => {
         checkAllFriends()
     }
 
-    console.log('is friend? => ', response);
-
     return (
         <>
             <div className="containerEditProfile">
