@@ -197,12 +197,75 @@ p, h1, h2, h3, h4, h5, h6 {
 .messagesPage {
   display: flex;
   height: 87vh;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow);
+  padding-left: 10px;
 }
 
 .friendsListChat {
   width: 20%;
   padding-top: 10px;
   overflow: auto;
+  cursor: pointer;
+}
+
+.friendsListChat div {
+  width: 100%;
+}
+
+.chatWindow {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.friendInfoPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px 10px 20px;
+  background-color: white;
+}
+
+.friendInfoPage img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+
+.friendInfoPage p {
+  display: inline-block;
+}
+
+.friendInfoPage a {
+  text-decoration: none;
+  color: #25b6b8;
+  font-weight: 600;
+  transition: .5s ease-in-out;
+}
+
+.friendInfoPage a:hover {
+  text-decoration: underline;
+}
+
+/* .chatWindowMessages {
+  height: 85%;
+} */
+
+.chatWindowInput input {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  padding-left: 20px;
+}
+
+.chatWindowInput input:focus {
+  outline: none;
 }
 
 /* LOGIN PAGE */
