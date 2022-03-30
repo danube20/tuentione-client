@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
-import { Link } from 'react-router-dom'
 import FriendsChatWindow from "../../components/FriendsChatWindow/FriendsChatWindow"
 import userService from "../../services/user.service"
 import { AuthContext } from '../../context/auth.context'
+import Chat from "../../components/Chat/Chat"
 
 const MessagesPage = () => {
 
@@ -34,19 +34,7 @@ const MessagesPage = () => {
             </div>
             {
                 friend !== undefined &&
-                <div className="chatWindow">
-                    <div className="friendInfoPage">
-                        <div>
-                            <img src={friend?.imageURL} alt={friend?.username} />
-                            <p>{friend?.nameUser} {friend?.surnameUser}</p>
-                        </div>
-                        <Link to={`/perfil/${friend?.username}`}>Ir al perfil</Link>
-                    </div>
-                    <div className="chatWindowMessages"></div>
-                    <div className="chatWindowInput">
-                        <input type="text" name="chat" placeholder="Envía un mensaje..." />
-                    </div>
-                </div>
+                <Chat friend={friend} />
             }
         </div>
     )
