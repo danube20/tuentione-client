@@ -257,7 +257,7 @@ p, h1, h2, h3, h4, h5, h6 {
 } */
 
 .chatWindowInput input {
-  width: 100%;
+  width: 95%;
   height: 2.5rem;
   border: none;
   box-shadow: var(--box-shadow);
@@ -266,6 +266,21 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .chatWindowInput input:focus {
   outline: none;
+}
+
+.chatWindowInput button {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 10px 7px;
+  border: none;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .3s ease-out;
+}
+
+.chatWindowInput button:hover {
+  background-color: #dadada;
 }
 
 /* LOGIN PAGE */
