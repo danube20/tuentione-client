@@ -896,6 +896,20 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* DISCOVER PAGE */
 
+.discoverInput {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.discoverInput input {
+  width: 30rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
 .discoverContainer {
   display: flex;
   flex-wrap: wrap;
