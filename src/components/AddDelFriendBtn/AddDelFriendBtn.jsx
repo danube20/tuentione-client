@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { AuthContext } from "../../context/auth.context"
 import userService from "../../services/user.service"
+import chatService from "../../services/chat.service"
 
 const AddDelFriendBtn = () => {
 
@@ -32,19 +33,26 @@ const AddDelFriendBtn = () => {
         checkAllFriends()
     }
 
-    const addFriend = () => { // Push the user to the friend's array
+    const addFriend = () => { // Push the user to the friend's array and creates new conversation
         response = true
         userService
             .addFriend(checkFriend?._id)
-            .then(() => loadUsers())
+            .then(() => {
+                loadUsers()
+                return chatService.createConversation(user?._id, checkFriend?._id)
+            })
+            // .then(({data}) => ) // Buscar solucion para eliminar conversacion si no es amigo
             .catch(err => console.log(err))
     }
 
-    const delFriend = () => { // Pull the user from the friend's array
+    const delFriend = () => { // Pull the user from the friend's array and deletes its conversation
         response = false
         userService
             .delFriend(checkFriend?._id)
-            .then(() => loadUsers())
+            .then(() => {
+                loadUsers()
+                // return chatService.deleteConversation()
+            })
             .catch(err => console.log(err))
     }
 

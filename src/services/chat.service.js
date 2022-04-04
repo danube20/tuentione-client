@@ -22,6 +22,10 @@ class ChatService {
         return this.axios.post('/conversation', { senderId, receiverId })
     }
 
+    deleteConversation(convId) {
+        return this.axios.delete(`/conversation/cnv/${convId}`)
+    }
+
     getConversation(userId) {
         return this.axios.get(`/conversation/${userId}`)
     }

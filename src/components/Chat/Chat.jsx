@@ -35,6 +35,7 @@ const Chat = ({ friend }) => {
         e.preventDefault()
 
         if (currentMessage !== '') {
+            // TODO: Crear conversacion cada vez que añadimos un amigo
             chatService
                 .createConversation(user?._id, friend?._id) // Crea una conversación nueva cada vez que se envia un mensaje *arreglar*
                 .then(({ data }) => {
