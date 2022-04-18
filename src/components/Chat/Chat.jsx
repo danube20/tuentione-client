@@ -62,7 +62,7 @@ const Chat = ({ friend }) => {
             <div className="chatWindowMessages">
                 <ScrollToBottom>
                     {
-                        messageList.map(elm => {
+                        messageList.map((elm) => {
                             return <p>{elm.message}</p>
                         })
                     }

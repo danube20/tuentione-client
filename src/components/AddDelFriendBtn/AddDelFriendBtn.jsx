@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/auth.context"
 import userService from "../../services/user.service"
 import chatService from "../../services/chat.service"
 
-const AddDelFriendBtn = () => {
+const AddDelFriendBtn = ({ friendId }) => {
 
     const [checkFriend, setCheckFriend] = useState()
     const { user } = useContext(AuthContext)
@@ -13,7 +13,7 @@ const AddDelFriendBtn = () => {
     // Get user information through params
     const loadUsers = () => {
         userService
-            .getOneUser(username)
+            .getOneUser(username || friendId)
             .then(({ data }) => setCheckFriend(data))
             .catch(err => console.log(err))
     }
@@ -41,17 +41,29 @@ const AddDelFriendBtn = () => {
                 loadUsers()
                 return chatService.createConversation(user?._id, checkFriend?._id)
             })
-            // .then(({data}) => ) // Buscar solucion para eliminar conversacion si no es amigo
             .catch(err => console.log(err))
     }
 
     const delFriend = () => { // Pull the user from the friend's array and deletes its conversation
         response = false
+        let friendConv
         userService
             .delFriend(checkFriend?._id)
             .then(() => {
                 loadUsers()
-                // return chatService.deleteConversation()
+                return userService.getOneUserById(checkFriend?._id)
+            })
+            .then(({ data }) => {
+                friendConv = data.conversations
+                return userService.getOneUserById(user?._id).then(({ data }) => data)
+            })
+            .then(data => {
+                const userConv = data.conversations
+                const convId = friendConv.filter(elm => userConv.includes(elm))
+
+                if (convId !== undefined) chatService.deleteConversation(convId)
+
+                return chatService.removeConversation(checkFriend?._id, convId)
             })
             .catch(err => console.log(err))
     }

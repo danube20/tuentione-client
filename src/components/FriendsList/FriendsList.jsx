@@ -17,8 +17,8 @@ const FriendsList = () => {
     return (
         <div className="friendsListContainer">
             {
-                userFriends?.map((eachFriend) => {
-                    return <div className="friendsCardContainer friendsCardProfile">
+                userFriends?.map((eachFriend, idx) => {
+                    return <div className="friendsCardContainer friendsCardProfile" key={idx}>
                         <Link className="friendsCardBtn" to={`/perfil/${eachFriend?.username}`}>
                             <img src={eachFriend?.imageURL} alt="user profile" />
                         </Link>

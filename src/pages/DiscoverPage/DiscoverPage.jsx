@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import AddDelFriendBtn from '../../components/AddDelFriendBtn/AddDelFriendBtn'
 import { AuthContext } from '../../context/auth.context'
 import userService from "../../services/user.service"
 
@@ -47,7 +48,10 @@ const DiscoverPage = () => {
                         if (searchTerm === '') {
                             return elm
                         }
-                        else if (elm.nameUser.toLowerCase().startsWith(searchTerm.toLowerCase()) || elm.surnameUser.toLowerCase().startsWith(searchTerm.toLowerCase())) {
+                        else if (
+                            elm.nameUser.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
+                            elm.surnameUser.toLowerCase().startsWith(searchTerm.toLowerCase())
+                        ) {
                             return elm
                         }
                     }).map(eachUser => {
@@ -61,15 +65,7 @@ const DiscoverPage = () => {
                                         </Link>
                                         {
                                             eachUser._id && user?._id !== eachUser._id &&
-                                            <>
-                                                {
-                                                    !eachUser.friends.some(el => el === user._id)
-                                                        ?
-                                                        <button className='discoverAddBtn' onClick={() => addFriend(eachUser._id)}>Añadir</button>
-                                                        :
-                                                        <button className='discoverDelBtn' onClick={() => delFriend(eachUser._id)}><i className="fa-solid fa-user-xmark"></i></button>
-                                                }
-                                            </>
+                                            <AddDelFriendBtn friendId={eachUser.username} />
                                         }
                                     </div>
                                 </div>

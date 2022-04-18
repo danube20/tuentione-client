@@ -30,6 +30,10 @@ class ChatService {
         return this.axios.get(`/conversation/${userId}`)
     }
 
+    removeConversation(friendId, convId) {
+        return this.axios.put(`/conversation/cnv/update/${friendId}/${convId}`)
+    }
+
     // Messages
 
     createMessage(info) {
