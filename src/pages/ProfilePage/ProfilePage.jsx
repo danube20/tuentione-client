@@ -12,6 +12,7 @@ const ProfilePage = () => {
     const { username } = useParams()
     const [userInfo, setUserInfo] = useState({})
     const { user } = useContext(AuthContext)
+    const [showFriends, setShowFriends] = useState(false)
 
     useEffect(() => {
         userService
@@ -36,6 +37,9 @@ const ProfilePage = () => {
     if (userInfo) {
         checkAllFriends()
     }
+
+    const showFriendsFunc = () => setShowFriends(true)
+    const hideFriendsFunc = () => setShowFriends(false)
 
     return (
         <>
@@ -63,9 +67,25 @@ const ProfilePage = () => {
                 </div>
             </div>
             <div className="mobileProfilePage profileBodyContainer">
-                <div className="profileFriendsList">
-                    <p>Lista de amigos</p>
-                    <FriendsList />
+                <div className="profileFriendsList" id="profileFriendsList">
+                    <div className="mobileProfileFriendsList">
+                        {
+                            !showFriends
+                                ?
+                                <button onClick={showFriendsFunc}>Ver lista de amigos</button>
+                                :
+                                <>
+                                    <button onClick={hideFriendsFunc}>Ocultar lista de amigos</button>
+                                    <p>Lista de amigos</p>
+                                    <div>
+                                        <FriendsList />
+                                    </div>
+                                </>
+                        }
+                    </div>
+                    <div className="profileFriendsListDiv">
+                        <FriendsList />
+                    </div>
                 </div>
                 <div className="mobileProfilePage profilePosts">
                     {

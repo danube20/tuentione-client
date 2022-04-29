@@ -19,20 +19,6 @@ const DiscoverPage = () => {
 
     useEffect(() => loadUsers(), [])
 
-    const addFriend = (eachUser_id) => {
-        userService
-            .addFriend(eachUser_id)
-            .then(() => loadUsers())
-            .catch(err => console.log(err))
-    }
-
-    const delFriend = (eachUser_id) => {
-        userService
-            .delFriend(eachUser_id)
-            .then(() => loadUsers())
-            .catch(err => console.log(err))
-    }
-
     return (
         <>
             <div className='discoverInput'>

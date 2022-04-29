@@ -91,6 +91,24 @@ p, h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+@media screen and (max-width: 991px) {
+  .loginRegister {
+    flex-direction: column;
+  }
+
+  .loginRegister a {
+    margin: 0.5rem 0;
+  }
+
+  .loginRegister span:nth-child(1) {
+    padding-left: 0;
+  }
+
+  .loginRegister span:nth-child(2) {
+    display: none;
+  }
+}
+
 /* CHAT WINDOW */
 
 .MessagesWindow {
@@ -192,6 +210,12 @@ p, h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
 }
 
+@media screen and (max-width: 991px) {
+  .MessagesWindow {
+    display: none;
+  }
+}
+
 /* MESSAGES PAGE */
 
 .messagesPage {
@@ -257,7 +281,7 @@ p, h1, h2, h3, h4, h5, h6 {
 } */
 
 .chatWindowInput input {
-  width: 95%;
+  width: 93%;
   height: 2.5rem;
   border: none;
   box-shadow: var(--box-shadow);
@@ -281,6 +305,16 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .chatWindowInput button:hover {
   background-color: #dadada;
+}
+
+@media screen and (max-width: 768px) {
+  .chatWindow {
+    display: none;
+  }
+
+  .friendsListChat {
+    width: 100%;
+  }
 }
 
 /* LOGIN PAGE */
@@ -365,6 +399,13 @@ p, h1, h2, h3, h4, h5, h6 {
 .loginButton:hover {
   background-color: #908f8f;
 
+}
+
+@media screen and (max-width: 768px) {
+  .loginQuestion {
+    width: 90%;
+    margin-top: 2rem;
+  }
 }
 
 /* PROFILE PAGE */
@@ -512,6 +553,28 @@ p, h1, h2, h3, h4, h5, h6 {
   text-transform: lowercase;
 }
 
+.profileFriendsListDiv {
+  max-height: 40rem;
+  overflow: auto;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.profileFriendsList .mobileProfileFriendsList>p {
+  margin-left: 20px;
+  font-weight: 600;
+  margin: 10px 0 1.5rem 0;
+}
+
+.profileFriendsList .mobileProfileFriendsList>p::before {
+  content: '';
+  border: 2px solid #25b6b8;
+  margin-right: 10px;
+}
+
+.mobileProfileFriendsList {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .containerEditProfile {
     display: block;
@@ -545,9 +608,39 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 
+  .profilePosts {
+    margin: 0;
+  }
+
   .profileEditBtn {
     right: 16px;
     margin-top: -40px;
+  }
+
+  .profileFriendsListDiv {
+    display: none;
+  }
+
+  .mobileProfileFriendsList {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .mobileProfileFriendsList>div {
+    max-height: 25rem;
+    overflow: auto;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+  }
+
+  .mobileProfileFriendsList button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
   }
 }
 
@@ -592,24 +685,6 @@ p, h1, h2, h3, h4, h5, h6 {
   color: gray;
   font-weight: 200;
   text-transform: lowercase;
-}
-
-.profileFriendsList {
-  height: 50rem;
-  overflow: auto;
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.3);
-}
-
-.profileFriendsList>p {
-  margin-left: 20px;
-  font-weight: 600;
-  margin: 10px 0 1.5rem 0;
-}
-
-.profileFriendsList>p::before {
-  content: '';
-  border: 2px solid #25b6b8;
-  margin-right: 10px;
 }
 
 /* HOMEPAGE */
