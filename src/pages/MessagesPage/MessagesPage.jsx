@@ -25,7 +25,7 @@ const MessagesPage = () => {
 
     const friend = friendSelected?.find(elm => elm.imageURL === friendRaw)
 
-    return (
+    return ( // TODO: Crear modal cuando esté en responsive mobile
         <div className="messagesPage">
             <div className="friendsListChat" onClick={(e) => setFriendRaw(e.target.parentElement.firstChild.getAttribute('src'))}>
                 {

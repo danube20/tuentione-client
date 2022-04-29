@@ -216,6 +216,18 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .chatOneFriend img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .chatOneFriendInfo p {
+    font-size: 1.1em;
+  }
+}
+
 /* MESSAGES PAGE */
 
 .messagesPage {
@@ -314,6 +326,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
   .friendsListChat {
     width: 100%;
+  }
+
+  .friendsListChat div {
+    width: auto;
   }
 }
 
@@ -1070,6 +1086,12 @@ p, h1, h2, h3, h4, h5, h6 {
 .discoverDelBtn:hover {
   color: #ff0000;
   border: 1px solid #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+  .discoverInput input {
+    width: 90%;
+  }
 }
 
 

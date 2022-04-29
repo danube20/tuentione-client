@@ -38,6 +38,7 @@ const ProfilePage = () => {
         checkAllFriends()
     }
 
+    // Boolean to manage the state the button to see friend's list
     const showFriendsFunc = () => setShowFriends(true)
     const hideFriendsFunc = () => setShowFriends(false)
 
@@ -78,13 +79,13 @@ const ProfilePage = () => {
                                     <button onClick={hideFriendsFunc}>Ocultar lista de amigos</button>
                                     <p>Lista de amigos</p>
                                     <div>
-                                        <FriendsList />
+                                        <FriendsList userFriends={userInfo.friends} />
                                     </div>
                                 </>
                         }
                     </div>
                     <div className="profileFriendsListDiv">
-                        <FriendsList />
+                        <FriendsList userFriends={userInfo.friends} />
                     </div>
                 </div>
                 <div className="mobileProfilePage profilePosts">
@@ -95,7 +96,7 @@ const ProfilePage = () => {
                             <hr />
                         </>
                     }
-                    <EachOwnedPost />
+                    <EachOwnedPost userInfo={userInfo} />
                 </div>
             </div>
         </>
