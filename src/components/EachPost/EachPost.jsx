@@ -19,10 +19,12 @@ const EachPost = ({ eachPost }) => {
         posteosService
             .pullOneUserPost(eachPost._id) // Pull comment id from current post and then remove the comment
             .then(() => {
-                eachPost.comments.map(eachComment => commentServices.removeOneComment(eachComment._id))
-                return posteosService.deleteOnePost(eachPost._id)
+                return eachPost.comments.map(eachComment => commentServices.removeOneComment(eachComment._id))
             })
-            .then(() => refreshPosts())
+            .then(() => {
+                posteosService.deleteOnePost(eachPost._id)
+                refreshPosts()
+            })
             .catch(err => console.log(err))
     }
 
