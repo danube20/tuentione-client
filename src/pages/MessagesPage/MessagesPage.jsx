@@ -3,39 +3,30 @@ import FriendsChatWindow from "../../components/FriendsChatWindow/FriendsChatWin
 import userService from "../../services/user.service"
 import { AuthContext } from '../../context/auth.context'
 import Chat from "../../components/Chat/Chat"
+import chatService from "../../services/chat.service"
 
 const MessagesPage = () => {
 
     const { user } = useContext(AuthContext)
-    const [userInfo, setUserInfo] = useState({})
-    const [friendSelected, setFriendSelected] = useState([])
-    const [friendRaw, setFriendRaw] = useState('')
+    const [oneConv, setOneConv] = useState([])
+    const [convId, setConvId] = useState('')
 
     useEffect(() => {
-        userService
-            .getOneUserById(user?._id)
-            .then(({ data }) => {
-                setUserInfo(data)
-                const friendsList = data.friends?.map(eachFriend => userService.getOneUserById(eachFriend).then(({ data }) => data))
-                return Promise.all(friendsList)
-            })
-            .then(friends => setFriendSelected(friends))
+        chatService
+            .getConversation(user?._id)
+            .then(({ data }) => setOneConv(data))
             .catch(err => console.log(err))
     }, [user?._id])
 
-    const friend = friendSelected?.find(elm => elm.imageURL === friendRaw)
-
+    console.log('convid', convId);
     return ( // TODO: Crear modal cuando esté en responsive mobile
         <div className="messagesPage">
-            <div className="friendsListChat" onClick={(e) => setFriendRaw(e.target.parentElement.firstChild.getAttribute('src'))}>
+            <div className="friendsListChat" onClick={(e) => setConvId(e.target.lastChild.textContent)}>
                 {
-                    userInfo.friends?.map((eachFriend, idx) => <FriendsChatWindow key={idx} eachFriend={eachFriend} />)
+                    oneConv?.map((eachConv, idx) => <FriendsChatWindow eachConv={eachConv} key={idx} />)
                 }
             </div>
-            {
-                friend !== undefined &&
-                <Chat friend={friend} />
-            }
+            <Chat />
         </div>
     )
 }

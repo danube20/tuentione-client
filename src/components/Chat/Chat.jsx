@@ -34,19 +34,27 @@ const Chat = ({ friend }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (currentMessage !== '') {
-            chatService
-                .createConversation(user?._id, friend?._id) // Crea una conversación nueva cada vez que se envia un mensaje *arreglar*
-                .then(({ data }) => {
-                    const newMessage = {
-                        conversationId: data._id,
-                        sender: user?._id,
-                        text: currentMessage
-                    }
-                    return chatService.createMessage(newMessage)
-                })
-                .catch(err => console.log(err))
-        }
+        // if (currentMessage !== '') {
+        //     const newMessage = {
+        //         conversationId: data._id,
+        //         sender: user?._id,
+        //         text: currentMessage
+        //     }
+
+        //     chatService
+        //         .createMessage(newMessage)
+        //         // .then(({ data }) => {
+        //         // })
+        //         .catch(err => console.log(err))
+        // }
+        setCurrentMessage('')
+        fetchAllMessages()
+    }
+
+    const fetchAllMessages = () => {
+        chatService
+            .getConversation(user?._id)
+            .then(data => console.log('conversations', data))
     }
 
     return (
