@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from '../../context/auth.context'
+import chatService from "../../services/chat.service"
 import userService from '../../services/user.service'
 import FriendsChatWindow from "../FriendsChatWindow/FriendsChatWindow"
 
 const MessagesWindow = () => {
 
     const { user } = useContext(AuthContext)
+    const [oneConv, setOneConv] = useState([])
     const [userInfo, setUserInfo] = useState({})
     const chat = user?._id === undefined ? 'displayNone' : 'MessagesWindow'
     let icon = false
@@ -13,7 +15,11 @@ const MessagesWindow = () => {
     useEffect(() => {
         userService
             .getOneUserById(user?._id)
-            .then(({ data }) => setUserInfo(data))
+            .then(({ data }) => {
+                setUserInfo(data)
+                return chatService.getConversation(user?._id)
+            })
+            .then(({ data }) => setOneConv(data))
             .catch(err => console.log(err))
     }, [user?._id])
 
@@ -21,7 +27,7 @@ const MessagesWindow = () => {
         const parent = e.target.parentElement.parentElement
         parent.classList.toggle('openedWindow')
         parent.lastChild.classList.toggle('chatFriends')
-        if (parent.classList === 'chatFriendsNone') { // perfilar mejor el overflow
+        if (parent.classList === 'chatFriendsNone') { // TODO: perfilar mejor el overflow
             parent.style.overflow = 'hidden'
         } else {
             parent.style.overflow = 'auto'
@@ -39,7 +45,7 @@ const MessagesWindow = () => {
                     <p>Mensajes</p>
                 </div>
                 {
-                    !icon // Arreglar el bool para cambiar de icono
+                    !icon // TODO: Arreglar el bool para cambiar de icono
                         ?
                         <i className="fa-solid fa-chevron-up" onClick={(e) => {
                             arwup()
@@ -53,7 +59,7 @@ const MessagesWindow = () => {
                 }
             </div>
             <div className="chatFriendsNone">
-                {userInfo.friends?.map((eachFriend, idx) => <FriendsChatWindow key={idx} eachFriend={eachFriend} />)}
+                {oneConv?.map((eachConv, idx) => <FriendsChatWindow key={idx} eachConv={eachConv} />)}
             </div>
         </div>
     )

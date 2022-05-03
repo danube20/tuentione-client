@@ -26,7 +26,8 @@ const MessagesPage = () => {
                     oneConv?.map((eachConv, idx) => <FriendsChatWindow eachConv={eachConv} key={idx} />)
                 }
             </div>
-            <Chat />
+            {/* <Chat /> */}
+            <p style={{ color: 'rgba(0,0,0,0.3' }}>Chat en desarrollo...</p>
         </div>
     )
 }
